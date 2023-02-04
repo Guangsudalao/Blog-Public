@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>用Cloudflare workers为freenom域名续期</title>
+    <link href="/posts/freenom_with_cloudflare/"/>
+    <url>/posts/freenom_with_cloudflare/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://link.dlya.top/freenom-workers">Github仓库地址</a><br>通过Cloudflare Workers自动续期Freenom域名<br>由<a href="https://link.dlya.top/PencilNavigator_github">PencilNavigator</a>制作</p><h2 id="首先进入workers-cloudflare-com新建一个workers"><a href="#首先进入workers-cloudflare-com新建一个workers" class="headerlink" title="首先进入workers.cloudflare.com新建一个workers"></a>首先进入<a href="https://link.dlya.top/cfworkers">workers.cloudflare.com</a>新建一个workers</h2><p>在快速编辑里面复制<a href="https://link.dlya.top/freenom-workers-js">这里的代码</a></p><h2 id="然后进入到变量页面填写信息"><a href="#然后进入到变量页面填写信息" class="headerlink" title="然后进入到变量页面填写信息"></a>然后进入到变量页面填写信息</h2><p><img src="https://static.dlya.top/img/freenom/freenom_bl.jpg" alt="变量"><br>填写完成后就如这样<br>也可以勾选右侧的变量加密按钮，可以降低信息泄露的危险<br><img src="https://static.dlya.top/img/freenom/freenom_bl_finish.png" alt="变量"></p><h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><p>进入触发器页面，在“添加Cron触发器”界面，设置触发器并且保存。推荐执行时间为一天一次。</p><h1 id="一些Cron的例子"><a href="#一些Cron的例子" class="headerlink" title="一些Cron的例子"></a>一些Cron的例子</h1><hr><table><thead><tr><th>时间</th><th>代码</th></tr></thead><tbody><tr><td>每分钟</td><td>* * * * *</td></tr><tr><td>每30分钟</td><td>*&#x2F;30 * * * *</td></tr><tr><td>每个小时的第45分钟</td><td>45 * * * *</td></tr><tr><td>在星期天的17：00</td><td>0 17 * * sun or 0 17 * * 1</td></tr><tr><td>工作日早上7：10</td><td>10 7 * * mon-fri or 10 7 * * 2-6</td></tr><tr><td>每月的第一天下午3点</td><td>0 15 1 * *</td></tr><tr><td>每月的最后一个星期五的18：00</td><td>0 18 * * 6L or 0 18 * * friL</td></tr><tr><td>每月最后一个工作日的23：59</td><td>23 59 LW * *</td></tr></tbody></table><hr><h2 id="其他的一些要点"><a href="#其他的一些要点" class="headerlink" title="其他的一些要点"></a>其他的一些要点</h2><p>由于*.workers.dev在国内污染严重，建议在触发器页面内绑定自己域名使用。<br>尽量禁用默认的*.workers.dev域名。</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://link.dlya.top/cron-triggers">https://developers.cloudflare.com/workers/platform/triggers/cron-triggers/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>freenom</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>freenom</tag>
+      
+      <tag>cloudflare</tag>
+      
+      <tag>cloudflare workers</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>月度总结</title>
+    <link href="/posts/2022.11.12/"/>
+    <url>/posts/2022.11.12/</url>
+    
+    <content type="html"><![CDATA[<p>咕咕了这么久</p><p>终于有时间回来更新了(<del>水</del>)</p><p>距离上一次更新是将近2个月前的事情了</p><p>首先呢，原神抽到了纳西妲和专武</p><p><img src="https://static.dlya.top/img/naxida.jpg" alt="纳西妲(自己的忘了截图，盗的)"></p><p>至于为什么抽到专武，是因为原本想抽宵宫专武飞雷的</p><p>结果就中了纳西妲专武</p><p><img src="https://static.dlya.top/img/ys_2022-11-12_164430.jpg" alt="武器池"></p><p><img src="https://static.dlya.top/img/ys_2022-11-12_165654.jpg" alt="专武"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>构建自己的云上工作流-Hexo自动部署</title>
+    <link href="/posts/hexo-auto-deploy-2/"/>
+    <url>/posts/hexo-auto-deploy-2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Hexo,一个快速、简洁且高效的博客框架。在各种的插件与主题之下，结合管理面板使用，可以与其获得与WordPress和typecho相媲美的优势所在。</p><h1 id="通过示例Github仓库构建"><a href="#通过示例Github仓库构建" class="headerlink" title="通过示例Github仓库构建"></a><a href="https://link.dlya.top/hexo-example">通过示例Github仓库构建</a></h1><p>内部版本:</p><p>主程序：Hexo：6.3.0</p><p>主题：Hexo-theme-yun：1.10.9</p><h2 id="部署到Vercel"><a href="#部署到Vercel" class="headerlink" title="部署到Vercel"></a>部署到Vercel</h2><p><a href="https://link.dlya.top/hexo-example-vercel" target="_blank" rel="noopener noreferrer"><img src="https://vercel.com/button" alt="Deploy with Vercel"></p><p><a href="https://link.dlya.top/hexo-example-vercel"></a></p><h2 id="部署到Netlify"><a href="#部署到Netlify" class="headerlink" title="部署到Netlify"></a>部署到Netlify</h2><p><a href="https://link.dlya.top/hexo-example-netlify"><img src="https://www.netlify.com/img/deploy/button.svg" alt="" title="部署到 Netlify"></a></p><h2 id="部署到Cloudflare-Pages"><a href="#部署到Cloudflare-Pages" class="headerlink" title="部署到Cloudflare Pages"></a>部署到Cloudflare Pages</h2><p>建议通过以上两种方式构建仓库之后，再用git方式添加到pages部署</p><h1 id="用Github-Action部署"><a href="#用Github-Action部署" class="headerlink" title="用Github Action部署"></a>用Github Action部署</h1><h2 id="私有方式部署-指部署仓库私有"><a href="#私有方式部署-指部署仓库私有" class="headerlink" title="私有方式部署(指部署仓库私有)"></a>私有方式部署(指部署仓库私有)</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">By</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Pages</span><br><span class="hljs-attr">on:</span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">deploy:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">Node</span><br>    <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v2</span><br>    <span class="hljs-attr">with:</span><br>      <span class="hljs-attr">node-version:</span> <span class="hljs-number">16.</span><span class="hljs-string">x</span><br><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">Dependencies</span><br>    <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-string">build</span><br><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span><br>    <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span><br>    <span class="hljs-attr">with:</span><br>      <span class="hljs-attr">personal_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.PERSONAL_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br>      <span class="hljs-attr">external_repository:</span> <span class="hljs-string">你的Github用户名/你的Github仓库名</span><br>      <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./public</span><br>      <span class="hljs-attr">publish_branch:</span> <span class="hljs-string">gh-pages</span><br>      <span class="hljs-attr">force_orphan:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure><h2 id="公有方式部署-指部署仓库公有"><a href="#公有方式部署-指部署仓库公有" class="headerlink" title="公有方式部署(指部署仓库公有)"></a>公有方式部署(指部署仓库公有)</h2><figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext">  <span class="hljs-attribute">name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Deploy By GitHub Pages</span><br><span class="hljs-attribute">on</span><span class="hljs-punctuation">:</span><br>  <span class="hljs-attribute">push</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">branches</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span><br><span class="hljs-attribute">jobs</span><span class="hljs-punctuation">:</span><br>  <span class="hljs-attribute">deploy</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">runs-on</span><span class="hljs-punctuation">:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attribute">steps</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">uses: actions/checkout@v2</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">name: Setup Node</span><br>        <span class="hljs-attribute">uses</span><span class="hljs-punctuation">:</span> <span class="hljs-string">actions/setup-node@v2</span><br>        <span class="hljs-attribute">with</span><span class="hljs-punctuation">:</span><br>          <span class="hljs-attribute">node-version</span><span class="hljs-punctuation">:</span> <span class="hljs-string">16.x</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">name: Install Dependencies</span><br>        <span class="hljs-attribute">run</span><span class="hljs-punctuation">:</span> <span class="hljs-string">npm i</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">run: npm run build</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">name: Deploy</span><br>        <span class="hljs-attribute">uses</span><span class="hljs-punctuation">:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span><br>        <span class="hljs-attribute">with</span><span class="hljs-punctuation">:</span><br>          <span class="hljs-attribute">github_token</span><span class="hljs-punctuation">:</span> <span class="hljs-string">$&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</span><br>          <span class="hljs-attribute">publish_dir</span><span class="hljs-punctuation">:</span> <span class="hljs-string">./public</span><br>          <span class="hljs-attribute">publish_branch</span><span class="hljs-punctuation">:</span> <span class="hljs-string">gh-pages</span><br>          <span class="hljs-attribute">force_orphan</span><span class="hljs-punctuation">:</span> <span class="hljs-string">true</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>IT</category>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Vercel</tag>
+      
+      <tag>Github</tag>
+      
+      <tag>Netlify</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Planetscale已将中国的访问屏蔽</title>
+    <link href="/posts/planetscale_ban/"/>
+    <url>/posts/planetscale_ban/</url>
+    
+    <content type="html"><![CDATA[<p>在本文发表的早些时候，app.planetscale.com屏蔽了所有来自中国的连接请求，并且返回了404和500错误，现有的任何储存库不会造成任何影响。但是无法登陆控制面板。</p><p>客服回复如下</p><blockquote><p>Hello,</p><p>My name is John Yerhot and I am responsible for the PlanetScale Support team.</p><p>Earlier today we removed access to PlanetScale for all users connecting from China. Anyone from within China attempting to access the PlanetScale web console or perform actions like logging in will receive an error. Any existing database should continue to be directly accessible, however.</p><p>We do not anticipate this will change in the foreseeable future.</p><p>We understand that this is not an ideal situation and we appreciate your understanding. If you need any help getting your data off the database with a tool like <code>mysqldump</code> or would like your account deleted, just let us know.</p><p>Thank you,</p><p>John Yerhot, Head of Support</p></blockquote><p>翻译过来就是</p><blockquote><p>您好，</p><p>我的名字是 John Yerhot，我负责 PlanetScale 支持团队。</p><p>今天早些时候，我们取消了所有从中国连接的用户对 PlanetScale 的访问权限。中国境内任何人尝试访问 PlanetScale Web 控制台或执行登录等操作都会收到错误消息。但是，任何现有的数据库都应该可以继续直接访问。</p><p>我们预计在可预见的未来这种情况不会改变。</p><p>我们知道这不是一个理想的情况，我们感谢您的理解。如果您需要任何帮助，使用类似工具将您的数据从数据库中<code>mysqldump</code>删除，或者希望您的帐户被删除，请告诉我们。</p><p>谢谢</p><p>支持主管 John Yerhot</p></blockquote><p><img src="https://static.dlya.top/img/planetscale_ban.jpg" alt="planetscale_ban.jpg"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>IT</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>IT</tag>
+      
+      <tag>planetscale</tag>
+      
+      <tag>屏蔽</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>记一次在Render上部署Cloudreve</title>
+    <link href="/posts/cloudreve-render/"/>
+    <url>/posts/cloudreve-render/</url>
+    
+    <content type="html"><![CDATA[<p>前几天在Github上看到了一个项目</p><p><a href="https://github.com/Sakura1943/cloudreve-render">https://github.com/Sakura1943/cloudreve-render</a></p><p>然后突然想起来自己的CloudReve不是1天就要掉线一次，而且还要手动重启，所以就有了以下的内容。</p><p>根据仓库的Readme.md可以知道作者大大给的部署教程，这里就不多说了，有需要的见链接。<a href="https://blog.sakunia.tk/2022/03/30/render_cloudreve">https://blog.sakunia.tk/2022/03/30/render_cloudreve</a></p><p>然鹅。</p><p>在第一次部署的时候，发现日志内输出CloudReve版本是3.4.2。</p><p>于是乎。</p><p>我Fork了这个仓库，并更新了DockerFile内的Cloudreve版本。</p><p>不知是什么原因，作者大大一直没有通过我提交的Pull Request。</p><p>支持原作者，但你也可以使用我Fork修改的版本。</p><p><a href="https://github.com/Guangsudalao-Studio/cloudreve-render">https://github.com/Guangsudalao-Studio/cloudreve-render</a></p><p>至于为何是团队仓库，因为个人仓库已经提交Pull Request。为了保持原有作者的仓库链接。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>IT</category>
+      
+      <category>Cloudreve</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>IT</tag>
+      
+      <tag>Cloudreve</tag>
+      
+      <tag>Render</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>注意</title>
+    <link href="/posts/warn-domain/"/>
+    <url>/posts/warn-domain/</url>
+    
+    <content type="html"><![CDATA[<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><blockquote><p>本站的旧域名guangsudalao.top即将在2022.08.19时过期，请有友链的博主尽快更换链接</p><p>博客名称：光速大佬的小站</p><p>博客介绍：独步天下，吾心自洁，无欲无求，如林中之象。</p><p>博客链接：<a href="https://blog.dlya.top/">https://blog.dlya.top</a></p><p>博客图片：<a href="https://cravatar.cn/avatar/7819c71a6100c1d8d7fa6b5b7bf961be?s=500&d=mm&r=g">https://cravatar.cn/avatar/7819c71a6100c1d8d7fa6b5b7bf961be?s=500&amp;d=mm&amp;r=g</a></p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>警告</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>警告</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Github+Vercel免费反代理域名</title>
+    <link href="/posts/vercel_github/"/>
+    <url>/posts/vercel_github/</url>
+    
+    <content type="html"><![CDATA[<h2 id="需要的材料"><a href="#需要的材料" class="headerlink" title="需要的材料"></a>需要的材料</h2><p>一个可以上Github的设备以及Github账号、Vercel账号</p><h2 id="本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！"><a href="#本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！" class="headerlink" title="本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！"></a>本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！</h2><p>如果需要使用Vercel-CLI的方法可以查看！参考资料:<a href="https://blog.ltya.top/tutorial/206.html">https://blog.ltya.top/tutorial/206.html</a></p><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>新建一个Github储存库，仓库名自取，<a href="https://link.dlya.top/github_new">点击这里直接创建</a>。</p><p>在储存库中新建vercel.json</p><p>其中内容如下</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;routes&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>      <span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;src&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/(.*)&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;dest&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://你的域名（带协议头）/$1&quot;</span><span class="hljs-punctuation">&#125;</span><br>  <span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure><p>新建完之后<a href="https://link.dlya.top/vercel-proxy">比如这样</a></p><p>注意替换这段文本’你的域名（带协议头）’</p><p>最后在<a href="https://link.dlya.top/vercel">Vercel</a>上部署即可。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>IT</category>
+      
+      <category>Vercel</category>
+      
+      <category>GitHub</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>IT</tag>
+      
+      <tag>Vercel</tag>
+      
+      <tag>GitHub</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>振奋人心的励志歌《Higher》：我在飞翔，追逐天际</title>
+    <link href="/posts/higher_song/"/>
+    <url>/posts/higher_song/</url>
+    
+    <content type="html"><![CDATA[<p>歌曲：Higher</p><p>歌手：Erik Grönwall</p><p>【振奋人心的励志歌《Higher》：我在飞翔，追逐天际-哔哩哔哩】<a href="https://b23.tv/T7vW21">https://b23.tv/T7vW21</a></p><h2 id="歌曲歌词"><a href="#歌曲歌词" class="headerlink" title="歌曲歌词:"></a>歌曲歌词:</h2><p>Hey, I’m a believer</p><p>And gravity’s letting go of me tonight</p><p>You, came out of nowhere</p><p>When everything was passing by at the speed of light</p><p>嘿，我是一个有信仰的人</p><p>今晚，我会挣脱重力的束缚</p><p>你，突然从不知何处出现</p><p>当一切如光速般闪过</p><p>So hold my hand and never let me go</p><p>Take a leap of fate into the unknown</p><p>紧握我的手，别让我离开</p><p>信心百倍的面对未知世界</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p><p>Oh I know</p><p>It can be scary</p><p>You bet it all when your heart is on the line</p><p>But oh, baby don’t worry</p><p>Just hold my hand and never let me go</p><p>噢，我知道</p><p>这令人惧怕</p><p>当你决心已下，就要放手一搏</p><p>但是，宝贝，别担心</p><p>只管抓紧我的手，别让我离开</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p><p>Take me higher</p><p>I hold you as we’re shooting through the atmosphere</p><p>Around us everything disappears</p><p>带我高飞</p><p>我抱着你，我们直冲云霄</p><p>身边的一切都烟消云散</p><p>Woah oa oa</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>噢…</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>English</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>English</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo持续部署</title>
+    <link href="/posts/hexo-auto-deploy/"/>
+    <url>/posts/hexo-auto-deploy/</url>
+    
+    <content type="html"><![CDATA[<p>部署方法:Vercel,Netlify,Cloudflare</p><h2 id="1-Vercel"><a href="#1-Vercel" class="headerlink" title="1.Vercel:"></a>1.Vercel:</h2><p><a href="https://vercel.com/new/clone?s=https://github.com/vercel/vercel/tree/main/examples/hexo&template=hexo&id=67753070&b=main&from=templates">https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fvercel%2Fvercel%2Ftree%2Fmain%2Fexamples%2Fhexo&amp;template=hexo&amp;id=67753070&amp;b=main&amp;from=templates</a>.</p><p>部署设置选择hexo。</p><p>不需要特殊设置，直接部署即可。</p><h1 id="Vercel的通用dns"><a href="#Vercel的通用dns" class="headerlink" title="Vercel的通用dns:"></a>Vercel的通用dns:</h1><p>指向 Vercel 的 A 记录值: 76.76.21.21</p><p>指向 Vercel 的 cname记录值为：cname.vercel-dns.com</p><h1 id="Vercel的中国dns"><a href="#Vercel的中国dns" class="headerlink" title="Vercel的中国dns:"></a>Vercel的中国dns:</h1><p>指向 Vercel 的 A 记录值: 76.223.126.88</p><p>指向 Vercel 的 cname记录值为：cname-china.vercel-dns.com</p><h2 id="2-Netlify"><a href="#2-Netlify" class="headerlink" title="2.Netlify:"></a>2.Netlify:</h2><p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/hexojs/hexo-starter">https://app.netlify.com/start/deploy?repository=https://github.com/hexojs/hexo-starter</a></p><p>如果已经部署完成，可以在Netlify项目中的Site setting修改域名前缀。</p><h2 id="3-Cloudflare"><a href="#3-Cloudflare" class="headerlink" title="3.Cloudflare:"></a>3.Cloudflare:</h2><p>部署代码如下</p><p>npm install hexo-cli -g&amp;&amp;hexo clean&amp;&amp;hexo g</p><p>或者是</p><p>npm run build</p><p>输出目录：&#x2F;public</p><p><img src="https://static.dlya.top/img/Hexo/2022/8/b51afd44504caae6fa36a19e7b54c4e2.webp" alt="https://static.dlya.top/img/Hexo/2022/8/b51afd44504caae6fa36a19e7b54c4e2.webp"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>IT</category>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Vercel</tag>
+      
+      <tag>Netlify</tag>
+      
+      <tag>GitHub</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>免费网站托管</title>
+    <link href="/posts/free-hosting/"/>
+    <url>/posts/free-hosting/</url>
+    
+    <content type="html"><![CDATA[<p>点击<a href="https://link.dlya.top/fwhost">这里</a>进入首页<br>点击<a href="https://link.dlya.top/fwhost_siginup">这里</a>进入注册页面<br>点击<a href="https://link.dlya.top/fwhost_panel">这里</a>进入控制面板</p><p>PS：网站自带cloudflare加速</p><p>内置5个域名：</p><p><a href="https://link.dlya.top/fwhost_ml">fownhost.ml</a></p><p><a href="https://link.dlya.top/fwhost">fownhost.ga</a></p><p><a href="https://link.dlya.top/fwhost_gq">fownhost.gq</a></p><p><a href="https://link.dlya.top/fwhost_cf">fownhost.cf</a></p><p><a href="https://link.dlya.top/fwhost_tk">fownhost.tk</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>IT</category>
+      
+      <category>Free</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>IT</tag>
+      
+      <tag>免费网站托管</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
