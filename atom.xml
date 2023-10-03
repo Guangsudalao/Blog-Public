@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>光速大佬的小站</title>
+  <icon>https://blog.dlya.top/favicon.png</icon>
+  <subtitle>独步天下,吾心自洁,无欲无求,如林中之象。</subtitle>
+  <link href="https://blog.dlya.top/atom.xml" rel="self"/>
+  
+  <link href="https://blog.dlya.top/"/>
+  <updated>2023-10-03T05:34:58.276Z</updated>
+  <id>https://blog.dlya.top/</id>
+  
+  <author>
+    <name>Guangsudalao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次在Render上部署Cloudreve</title>
+    <link href="https://blog.dlya.top/posts/cloudreve-render/"/>
+    <id>https://blog.dlya.top/posts/cloudreve-render/</id>
+    <published>2022-07-23T14:31:32.000Z</published>
+    <updated>2023-10-03T05:34:58.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前几天在Github上看到了一个项目&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://link.dlya.top/crrgh&quot; target=&quot;_blank&quot; rel=&quot;noopener external nofollow</summary>
+        
+      
+    
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/categories/IT/"/>
+    
+    <category term="Cloudreve" scheme="https://blog.dlya.top/categories/IT/Cloudreve/"/>
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/tags/IT/"/>
+    
+    <category term="Cloudreve" scheme="https://blog.dlya.top/tags/Cloudreve/"/>
+    
+    <category term="Render" scheme="https://blog.dlya.top/tags/Render/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>免费网站托管</title>
+    <link href="https://blog.dlya.top/posts/free-hosting/"/>
+    <id>https://blog.dlya.top/posts/free-hosting/</id>
+    <published>2021-08-26T15:30:13.000Z</published>
+    <updated>2023-10-03T05:34:58.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;点击&lt;a href=&quot;https://link.dlya.top/fwhost&quot; target=&quot;_blank&quot; rel=&quot;noopener external nofollow noreferrer&quot;&gt;这里&lt;/a&gt;进入首页&lt;br&gt;点击&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/categories/IT/"/>
+    
+    <category term="免费" scheme="https://blog.dlya.top/categories/IT/%E5%85%8D%E8%B4%B9/"/>
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/tags/IT/"/>
+    
+    <category term="免费网站托管" scheme="https://blog.dlya.top/tags/%E5%85%8D%E8%B4%B9%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo持续部署</title>
+    <link href="https://blog.dlya.top/posts/hexo-auto-deploy/"/>
+    <id>https://blog.dlya.top/posts/hexo-auto-deploy/</id>
+    <published>2021-09-19T15:13:30.000Z</published>
+    <updated>2023-10-03T05:34:58.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;部署方法:Vercel,Netlify,Cloudflare&lt;/p&gt;
+&lt;h2 id=&quot;1-Vercel&quot;&gt;&lt;a href=&quot;#1-Vercel&quot; class=&quot;headerlink&quot; title=&quot;1.Vercel:&quot;&gt;&lt;/a&gt;1.Vercel:&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/categories/IT/"/>
+    
+    <category term="Hexo" scheme="https://blog.dlya.top/categories/IT/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="https://blog.dlya.top/tags/Hexo/"/>
+    
+    <category term="Vercel" scheme="https://blog.dlya.top/tags/Vercel/"/>
+    
+    <category term="Netlify" scheme="https://blog.dlya.top/tags/Netlify/"/>
+    
+    <category term="GitHub" scheme="https://blog.dlya.top/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>注意</title>
+    <link href="https://blog.dlya.top/posts/warn-domain/"/>
+    <id>https://blog.dlya.top/posts/warn-domain/</id>
+    <published>2022-06-26T19:13:32.000Z</published>
+    <updated>2023-10-03T05:34:58.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;注意&quot;&gt;&lt;a href=&quot;#注意&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="警告" scheme="https://blog.dlya.top/categories/%E8%AD%A6%E5%91%8A/"/>
+    
+    
+    <category term="警告" scheme="https://blog.dlya.top/tags/%E8%AD%A6%E5%91%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>折腾日记：部署在vercel上的短链接</title>
+    <link href="https://blog.dlya.top/posts/vercel_short_link/"/>
+    <id>https://blog.dlya.top/posts/vercel_short_link/</id>
+    <published>2023-07-31T21:00:00.000Z</published>
+    <updated>2023-07-31T21:20:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这段时间在折腾短链接，顺手就整理了一下&lt;/p&gt;
+&lt;h2 id=&quot;来自Thewbear的短链接&quot;&gt;&lt;a href=&quot;#来自Thewbear的短链接&quot; class=&quot;headerlink&quot; title=&quot;来自Thewbear的短链接&quot;&gt;&lt;/a&gt;来自&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/categories/IT/"/>
+    
+    <category term="Vercel" scheme="https://blog.dlya.top/categories/IT/Vercel/"/>
+    
+    <category term="GitHub" scheme="https://blog.dlya.top/categories/IT/GitHub/"/>
+    
+    <category term="短链接" scheme="https://blog.dlya.top/categories/IT/%E7%9F%AD%E9%93%BE%E6%8E%A5/"/>
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/tags/IT/"/>
+    
+    <category term="Vercel" scheme="https://blog.dlya.top/tags/Vercel/"/>
+    
+    <category term="GitHub" scheme="https://blog.dlya.top/tags/GitHub/"/>
+    
+    <category term="短链接" scheme="https://blog.dlya.top/tags/%E7%9F%AD%E9%93%BE%E6%8E%A5/"/>
+    
+    <category term="Shorturl" scheme="https://blog.dlya.top/tags/Shorturl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github 2FA详解使用过程</title>
+    <link href="https://blog.dlya.top/posts/github_2fa/"/>
+    <id>https://blog.dlya.top/posts/github_2fa/</id>
+    <published>2023-04-02T21:27:48.000Z</published>
+    <updated>2023-06-26T20:22:57.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;开篇&lt;/h1&gt;
+
+&lt;p&gt;GitHub是一个面向开源及私有软件项目的托管平台,因为只支持Git作为唯一的版本库格式进行托管,故名GitHub。&lt;/p&gt;
+&lt;p&gt;而最近的一段时间里,Github宣布要求对有一定数量贡献的开发者强制启用2fa(即两步验证)。相当于给账号多加了一层</summary>
+        
+      
+    
+    
+    
+    <category term="2fa" scheme="https://blog.dlya.top/categories/2fa/"/>
+    
+    <category term="Github" scheme="https://blog.dlya.top/categories/2fa/Github/"/>
+    
+    
+    <category term="Github" scheme="https://blog.dlya.top/tags/Github/"/>
+    
+    <category term="Protectcc" scheme="https://blog.dlya.top/tags/Protectcc/"/>
+    
+    <category term="TOTP" scheme="https://blog.dlya.top/tags/TOTP/"/>
+    
+    <category term="2fa" scheme="https://blog.dlya.top/tags/2fa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>构建自己的云上工作流-Hexo自动部署</title>
+    <link href="https://blog.dlya.top/posts/hexo-auto-deploy-2/"/>
+    <id>https://blog.dlya.top/posts/hexo-auto-deploy-2/</id>
+    <published>2022-08-28T19:50:16.000Z</published>
+    <updated>2023-06-03T20:04:06.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/categories/IT/"/>
+    
+    <category term="Hexo" scheme="https://blog.dlya.top/categories/IT/Hexo/"/>
+    
+    
+    <category term="Github" scheme="https://blog.dlya.top/tags/Github/"/>
+    
+    <category term="Hexo" scheme="https://blog.dlya.top/tags/Hexo/"/>
+    
+    <category term="Vercel" scheme="https://blog.dlya.top/tags/Vercel/"/>
+    
+    <category term="Netlify" scheme="https://blog.dlya.top/tags/Netlify/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github+Vercel免费反代理域名</title>
+    <link href="https://blog.dlya.top/posts/vercel_github/"/>
+    <id>https://blog.dlya.top/posts/vercel_github/</id>
+    <published>2021-11-28T14:58:38.000Z</published>
+    <updated>2023-03-03T20:04:06.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;需要的材料&quot;&gt;&lt;a href=&quot;#需要的材料&quot; class=&quot;headerlink&quot; title=&quot;需要的材料&quot;&gt;&lt;/a&gt;需要的材料&lt;/h2&gt;&lt;p&gt;一个可以上Github的设备以及Github账号、Vercel账号&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/categories/IT/"/>
+    
+    <category term="Vercel" scheme="https://blog.dlya.top/categories/IT/Vercel/"/>
+    
+    <category term="GitHub" scheme="https://blog.dlya.top/categories/IT/GitHub/"/>
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/tags/IT/"/>
+    
+    <category term="Vercel" scheme="https://blog.dlya.top/tags/Vercel/"/>
+    
+    <category term="GitHub" scheme="https://blog.dlya.top/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用Cloudflare workers为freenom域名续期</title>
+    <link href="https://blog.dlya.top/posts/freenom_with_cloudflare/"/>
+    <id>https://blog.dlya.top/posts/freenom_with_cloudflare/</id>
+    <published>2023-01-19T16:28:42.000Z</published>
+    <updated>2023-01-19T17:43:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://link.dlya.top/fwgh&quot; target=&quot;_blank&quot; rel=&quot;noopener external nofollow noreferrer&quot;&gt;Github仓库地址&lt;/a&gt;&lt;br&gt;通过Cloudflare</summary>
+        
+      
+    
+    
+    
+    <category term="freenom" scheme="https://blog.dlya.top/categories/freenom/"/>
+    
+    
+    <category term="freenom" scheme="https://blog.dlya.top/tags/freenom/"/>
+    
+    <category term="cloudflare" scheme="https://blog.dlya.top/tags/cloudflare/"/>
+    
+    <category term="cloudflare workers" scheme="https://blog.dlya.top/tags/cloudflare-workers/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>月度总结</title>
+    <link href="https://blog.dlya.top/posts/2022.11.12/"/>
+    <id>https://blog.dlya.top/posts/2022.11.12/</id>
+    <published>2022-11-12T16:28:42.000Z</published>
+    <updated>2022-11-13T15:43:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;咕咕了这么久&lt;/p&gt;
+&lt;p&gt;终于有时间回来更新了(&lt;del&gt;水&lt;/del&gt;)&lt;/p&gt;
+&lt;p&gt;距离上一次更新是将近2个月前的事情了&lt;/p&gt;
+&lt;p&gt;首先呢，原神抽到了纳西妲和专武&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="总结" scheme="https://blog.dlya.top/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打包的（再见极域+多桌面工具）</title>
+    <link href="https://blog.dlya.top/posts/runexe/"/>
+    <id>https://blog.dlya.top/posts/runexe/</id>
+    <published>2022-03-17T13:31:10.000Z</published>
+    <updated>2022-09-24T16:39:19.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;打包的（再见极域-多桌面工具）&quot;&gt;&lt;a href=&quot;#打包的（再见极域-多桌面工具）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/categories/IT/"/>
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/tags/IT/"/>
+    
+    <category term="极域" scheme="https://blog.dlya.top/tags/%E6%9E%81%E5%9F%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Planetscale已将中国的访问屏蔽</title>
+    <link href="https://blog.dlya.top/posts/planetscale_ban/"/>
+    <id>https://blog.dlya.top/posts/planetscale_ban/</id>
+    <published>2022-08-11T12:59:39.000Z</published>
+    <updated>2022-08-12T13:10:30.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在本文发表的早些时候，app.planetscale.com屏蔽了所有来自中国的连接请求，并且返回了404和500错误，现有的任何储存库不会造成任何影响。但是无法登陆控制面板。&lt;/p&gt;
+&lt;p&gt;客服回复如下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hello,&lt;/p&gt;
+&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/categories/IT/"/>
+    
+    
+    <category term="IT" scheme="https://blog.dlya.top/tags/IT/"/>
+    
+    <category term="planetscale" scheme="https://blog.dlya.top/tags/planetscale/"/>
+    
+    <category term="屏蔽" scheme="https://blog.dlya.top/tags/%E5%B1%8F%E8%94%BD/"/>
+    
+  </entry>
+  
+</feed>
