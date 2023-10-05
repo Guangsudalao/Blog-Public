@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>折腾日记：部署在vercel上的短链接</title>
+      <link href="/posts/vercel_short_link/"/>
+      <url>/posts/vercel_short_link/</url>
+      
+        <content type="html"><![CDATA[<p>这段时间在折腾短链接，顺手就整理了一下</p><h2 id="来自Thewbear的短链接"><a href="#来自Thewbear的短链接" class="headerlink" title="来自Thewbear的短链接"></a>来自<a href="https://link.dlya.top/shorturltgh" target="_blank" rel="noopener external nofollow noreferrer">Thewbear</a>的短链接</h2><blockquote><h2 id="需要的材料"><a href="#需要的材料" class="headerlink" title="需要的材料"></a>需要的材料</h2><p> 一个<del>vercel和GitHub账号</del>这不是废话吗</p></blockquote><p>这边直接上仓库链接<br><a href="https://link.dlya.top/shorturltgh" target="_blank" rel="noopener external nofollow noreferrer">Github仓库</a></p><p>点击下面的按钮就可以部署啦<br><a href="https://link.dlya.top/shorturltv" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://vercel.com/button" alt="Deploy with Vercel" loading="lazy"></a></p><p>这边贴上redirects.yml的语法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- from: /baidu</span><br><span class="line">  to: https://baidu.com</span><br><span class="line">  status: 308 #更改状态码，例如301、302、307(默认)、308</span><br><span class="line">- from: /google/:q #精确匹配一个比如说 /google/:q</span><br><span class="line">  to: https://google.com/search?q=:q</span><br><span class="line">- from: /vercel/:slug* #匹配零个或多个比如说 /vercel/ vercel/docs</span><br><span class="line">  to: https://vercel.com/:slug</span><br><span class="line">- from: /github/:slug+ #一个或多个执行/github/ThewApp github/ThewApp/vercel-shorturl</span><br><span class="line">  to: https://github.com/:slug</span><br><span class="line">- from: /dev/:slug1/:slug2 #多个匹配例子 /dev/p/information</span><br><span class="line">  to: https://dev.to/:slug1/:slug2</span><br><span class="line">- from: /google</span><br><span class="line">  to: https://google.com/search?q=:q</span><br><span class="line">  query:</span><br><span class="line">    action: search #必须有这个精确的查询</span><br><span class="line">    q: :q #这个匹配再查询比如说 /google?action = search&amp;q =recursion</span><br><span class="line">- from: /dev</span><br><span class="line">  to: https://dev.to/:user</span><br><span class="line">  query:</span><br><span class="line">    u: :user? #可选匹配ex. /dev /dev?u = thewbear</span><br></pre></td></tr></table></figure><h2 id="来自Steven-tey的Dub"><a href="#来自Steven-tey的Dub" class="headerlink" title="来自Steven-tey的Dub"></a>来自<a href="https://link.dlya.top/dubgho" target="_blank" rel="noopener external nofollow noreferrer">Steven-tey</a>的<a href="https://link.dlya.top/dubgh" target="_blank" rel="noopener external nofollow noreferrer">Dub</a></h2><p>这个项目暂时还不是特别好用，感觉自托管在部署上比较繁琐，有兴趣的可以试试。</p><p>也可以在<a href="https://link.dlya.top/dub" target="_blank" rel="noopener external nofollow noreferrer">Dub.sh</a>托管自己的域名，但是需要一个咕鸽账号或者一个邮箱。域名绑定之后，直接cname解析到cname.vercel-dns.com，以及添加给出的txt记录验证就行了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Vercel </category>
+          
+          <category> GitHub </category>
+          
+          <category> 短链接 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> Vercel </tag>
+            
+            <tag> GitHub </tag>
+            
+            <tag> 短链接 </tag>
+            
+            <tag> Shorturl </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Github 2FA详解使用过程</title>
+      <link href="/posts/github_2fa/"/>
+      <url>/posts/github_2fa/</url>
+      
+        <content type="html"><![CDATA[<h1>开篇</h1><p>GitHub是一个面向开源及私有软件项目的托管平台,因为只支持Git作为唯一的版本库格式进行托管,故名GitHub。</p><p>而最近的一段时间里,Github宣布要求对有一定数量贡献的开发者强制启用2fa(即两步验证)。相当于给账号多加了一层锁。<br><img src="https://static.dlya.top/img/Hexo/2023/4/44a894a74e7c06f1229f6b0daeef0987.png" alt="github_contributions" loading="lazy"></p><h1 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h1><p>来到<a href="https://link.dlya.top/ghsec" target="_blank" rel="noopener external nofollow noreferrer">Account security (github.com)</a>这个页面<br><img src="https://static.dlya.top/img/Hexo/2023/4/fefa07aef9f5bff2aa350a6595a54e6d.png" alt="settings_pages" loading="lazy"></p><p>具体是登录GitHub账号,选择右上方头像当中的”settings“,再选择 “Password and authentication” ,然后选择Enable two-factor authentication</p><h1 id="TOTP验证器"><a href="#TOTP验证器" class="headerlink" title="TOTP验证器"></a>TOTP验证器</h1><h2 id="使用Microsoft-Authenticator"><a href="#使用Microsoft-Authenticator" class="headerlink" title="使用Microsoft Authenticator"></a>使用Microsoft Authenticator</h2><p>通过这条<a href="https://link.dlya.top/msauth" target="_blank" rel="noopener external nofollow noreferrer">中国公有云中-android-的-authenticator</a>链接可得知，在咕鸽商店无法访问的情况下，Microsoft Authenticator仍可下载。<br>点击<a href="https://link.dlya.top/msauth" target="_blank" rel="noopener external nofollow noreferrer">这里前往下载</a></p><h2 id="使用Protecc"><a href="#使用Protecc" class="headerlink" title="使用Protecc"></a>使用Protecc</h2><p>例如微软商店里的Protecc,是一个在 Windows 上的开源两步验证器。支持几乎所有使用 TOTP 算法的账号,还有一些内置的隐私保护措施,例如隐私屏障和代码模糊。还有,Protecc 还支持用 Windows Hello 来登录,以及二维码导入(需要相机权限)。还可以导出验证密钥来备份。</p><p><a href="https://link.dlya.top/prccms" target="_blank" rel="noopener external nofollow noreferrer">Protecc - 两步 TOTP 验证器</a></p><p><img src="https://static.dlya.top/img/Hexo/2023/4/4e88d523b6aa8f42eec31e8db6ced56f.png" alt="商店页面" loading="lazy"></p><p>安装完成之后打开软件<br><img src="https://static.dlya.top/img/Hexo/2023/4/7659a6f2452cffaece375fb6f1bac2ca.png" alt="按钮" loading="lazy"></p><p>选择上方的 <strong>“Enter Key”</strong></p><p><img src="https://static.dlya.top/img/Hexo/2023/4/9ecd63303d7d233f43a856e565218224.png" alt="打开添加页面" loading="lazy"></p><p>在Name中填入你注册Github时使用的邮箱,Key中填入在GitHub上获取到的密钥(如下图中所示)</p><p><img src="https://static.dlya.top/img/Hexo/2023/4/ae00de75aeedea1e8d8352a657562b35.png" alt="App secret" loading="lazy"></p><p>填写完成后点击下方的Next就可以使用了。</p><h2>参考</h2><p><a href="https://link.dlya.top/prccgh" target="_blank" rel="noopener external nofollow noreferrer">FireCubeStudios&#x2F;Protecc: It protecc (github.com)</a></p><p><a href="https://link.dlya.top/ghbk" target="_blank" rel="noopener external nofollow noreferrer">Github_百度百科 (baidu.com)</a></p><p><a href="https://link.dlya.top/msauth" target="_blank" rel="noopener external nofollow noreferrer">中国公有云中-android-的-authenticator</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2fa </category>
+          
+          <category> Github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> Protectcc </tag>
+            
+            <tag> TOTP </tag>
+            
+            <tag> 2fa </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>用Cloudflare workers为freenom域名续期</title>
+      <link href="/posts/freenom_with_cloudflare/"/>
+      <url>/posts/freenom_with_cloudflare/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://link.dlya.top/fwgh" target="_blank" rel="noopener external nofollow noreferrer">Github仓库地址</a><br>通过Cloudflare Workers自动续期Freenom域名<br>由<a href="https://link.dlya.top/fwgho" target="_blank" rel="noopener external nofollow noreferrer">PencilNavigator</a>制作</p><h2 id="首先进入workers-cloudflare-com新建一个workers"><a href="#首先进入workers-cloudflare-com新建一个workers" class="headerlink" title="首先进入workers.cloudflare.com新建一个workers"></a>首先进入<a href="https://link.dlya.top/cfw" target="_blank" rel="noopener external nofollow noreferrer">workers.cloudflare.com</a>新建一个workers</h2><p>在快速编辑里面复制<a href="https://link.dlya.top/fwghj" target="_blank" rel="noopener external nofollow noreferrer">这里的代码</a></p><h2 id="然后进入到变量页面填写信息"><a href="#然后进入到变量页面填写信息" class="headerlink" title="然后进入到变量页面填写信息"></a>然后进入到变量页面填写信息</h2><p><img src="https://static.dlya.top/img/freenom/freenom_bl.jpg" alt="变量" loading="lazy"><br>填写完成后就如这样<br>也可以勾选右侧的变量加密按钮，可以降低信息泄露的危险<br><img src="https://static.dlya.top/img/freenom/freenom_bl_finish.png" alt="变量" loading="lazy"></p><h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><p>进入触发器页面，在“添加Cron触发器”界面，设置触发器并且保存。推荐执行时间为一天一次。</p><h1 id="一些Cron的例子"><a href="#一些Cron的例子" class="headerlink" title="一些Cron的例子"></a>一些Cron的例子</h1><hr><table><thead><tr><th>时间</th><th>代码</th></tr></thead><tbody><tr><td>每分钟</td><td>* * * * *</td></tr><tr><td>每30分钟</td><td>*&#x2F;30 * * * *</td></tr><tr><td>每个小时的第45分钟</td><td>45 * * * *</td></tr><tr><td>在星期天的17：00</td><td>0 17 * * sun or 0 17 * * 1</td></tr><tr><td>工作日早上7：10</td><td>10 7 * * mon-fri or 10 7 * * 2-6</td></tr><tr><td>每月的第一天下午3点</td><td>0 15 1 * *</td></tr><tr><td>每月的最后一个星期五的18：00</td><td>0 18 * * 6L or 0 18 * * friL</td></tr><tr><td>每月最后一个工作日的23：59</td><td>23 59 LW * *</td></tr></tbody></table><hr><h2 id="其他的一些要点"><a href="#其他的一些要点" class="headerlink" title="其他的一些要点"></a>其他的一些要点</h2><p>由于*.workers.dev在国内污染严重，建议在触发器页面内绑定自己域名使用。<br>尽量禁用默认的*.workers.dev域名。</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://link.dlya.top/cfcrt" target="_blank" rel="noopener external nofollow noreferrer">https://developers.cloudflare.com/workers/platform/triggers/cron-triggers/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> freenom </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> freenom </tag>
+            
+            <tag> cloudflare </tag>
+            
+            <tag> cloudflare workers </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>月度总结</title>
+      <link href="/posts/2022.11.12/"/>
+      <url>/posts/2022.11.12/</url>
+      
+        <content type="html"><![CDATA[<p>咕咕了这么久</p><p>终于有时间回来更新了(<del>水</del>)</p><p>距离上一次更新是将近2个月前的事情了</p><p>首先呢，原神抽到了纳西妲和专武</p><p><img src="https://static.dlya.top/img/naxida.jpg" alt="纳西妲(自己的忘了截图，盗的)" loading="lazy"></p><p>至于为什么抽到专武，是因为原本想抽宵宫专武飞雷的</p><p>结果就中了纳西妲专武</p><p><img src="https://static.dlya.top/img/ys_2022-11-12_164430.jpg" alt="武器池" loading="lazy"></p><p><img src="https://static.dlya.top/img/ys_2022-11-12_165654.jpg" alt="专武" loading="lazy"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>构建自己的云上工作流-Hexo自动部署</title>
+      <link href="/posts/hexo-auto-deploy-2/"/>
+      <url>/posts/hexo-auto-deploy-2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Hexo,一个快速、简洁且高效的博客框架。在各种的插件与主题之下，结合管理面板使用，可以与其获得与WordPress和typecho相媲美的优势所在。</p><h1 id="通过示例Github仓库构建"><a href="#通过示例Github仓库构建" class="headerlink" title="通过示例Github仓库构建"></a><a href="https://link.dlya.top//hexoexgh" target="_blank" rel="noopener external nofollow noreferrer">通过示例Github仓库构建</a></h1><p>内部版本:</p><p>主程序：<br>      Hexo：6.3.0</p><p>主题：<br>      Hexo-theme-butterfly：4.8.5<br>      Yun主题已经分支，有需要可前往<a href="https://link.dlya.top/hexoexghy" target="_blank" rel="noopener external nofollow noreferrer">Yun分支下查看</a>，主分支已经更新为Butterfly主题!<br>      <del>Hexo-theme-yun：1.10.9</del></p><h2 id="部署到Vercel"><a href="#部署到Vercel" class="headerlink" title="部署到Vercel"></a>部署到Vercel</h2><p><a href="https://link.dlya.top/hexoexav" target="_blank" rel="noopener noreferrer"><img src="https://vercel.com/button" alt="Deploy with Vercel"></p><p><a href="https://link.dlya.top/hexoexav" target="_blank" rel="noopener external nofollow noreferrer"></a></p><h2 id="部署到Netlify"><a href="#部署到Netlify" class="headerlink" title="部署到Netlify"></a>部署到Netlify</h2><p><a href="https://link.dlya.top/hexoexan"><img src="https://www.netlify.com/img/deploy/button.svg" alt="" title="部署到 Netlify"></a></p><h2 id="部署到Cloudflare-Pages"><a href="#部署到Cloudflare-Pages" class="headerlink" title="部署到Cloudflare Pages"></a>部署到Cloudflare Pages</h2><p>建议通过以上两种方式构建仓库之后，再用git方式添加到pages部署</p><h1 id="用Github-Action部署"><a href="#用Github-Action部署" class="headerlink" title="用Github Action部署"></a>用Github Action部署</h1><h2 id="私有方式部署-指部署仓库私有"><a href="#私有方式部署-指部署仓库私有" class="headerlink" title="私有方式部署(指部署仓库私有)"></a>私有方式部署(指部署仓库私有)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">name: Deploy By GitHub Pages</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main</span><br><span class="line">jobs:</span><br><span class="line">  deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    steps:</span><br><span class="line">      - uses: actions/checkout@v2  - name: Setup Node</span><br><span class="line">    uses: actions/setup-node@v2</span><br><span class="line">    with:</span><br><span class="line">      node-version: 16.x</span><br><span class="line"></span><br><span class="line">  - name: Install Dependencies</span><br><span class="line">    run: npm i</span><br><span class="line">  - run: npm run build</span><br><span class="line"></span><br><span class="line">  - name: Deploy</span><br><span class="line">    uses: peaceiris/actions-gh-pages@v3</span><br><span class="line">    with:</span><br><span class="line">      personal_token: $&#123;&#123; secrets.PERSONAL_TOKEN &#125;&#125;</span><br><span class="line">      external_repository: 你的Github用户名/你的Github仓库名</span><br><span class="line">      publish_dir: ./public</span><br><span class="line">      publish_branch: gh-pages</span><br><span class="line">      force_orphan: true</span><br></pre></td></tr></table></figure><h2 id="公有方式部署-指部署仓库公有"><a href="#公有方式部署-指部署仓库公有" class="headerlink" title="公有方式部署(指部署仓库公有)"></a>公有方式部署(指部署仓库公有)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  name: Deploy By GitHub Pages</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main</span><br><span class="line">jobs:</span><br><span class="line">  deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    steps:</span><br><span class="line">      - uses: actions/checkout@v2</span><br><span class="line"></span><br><span class="line">      - name: Setup Node</span><br><span class="line">        uses: actions/setup-node@v2</span><br><span class="line">        with:</span><br><span class="line">          node-version: 16.x</span><br><span class="line"></span><br><span class="line">      - name: Install Dependencies</span><br><span class="line">        run: npm i</span><br><span class="line">      - run: npm run build</span><br><span class="line"></span><br><span class="line">      - name: Deploy</span><br><span class="line">        uses: peaceiris/actions-gh-pages@v3</span><br><span class="line">        with:</span><br><span class="line">          github_token: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</span><br><span class="line">          publish_dir: ./public</span><br><span class="line">          publish_branch: gh-pages</span><br><span class="line">          force_orphan: true</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Vercel </tag>
+            
+            <tag> Netlify </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Planetscale已将中国的访问屏蔽</title>
+      <link href="/posts/planetscale_ban/"/>
+      <url>/posts/planetscale_ban/</url>
+      
+        <content type="html"><![CDATA[<p>在本文发表的早些时候，app.planetscale.com屏蔽了所有来自中国的连接请求，并且返回了404和500错误，现有的任何储存库不会造成任何影响。但是无法登陆控制面板。</p><p>客服回复如下</p><blockquote><p>Hello,</p><p>My name is John Yerhot and I am responsible for the PlanetScale Support team.</p><p>Earlier today we removed access to PlanetScale for all users connecting from China. Anyone from within China attempting to access the PlanetScale web console or perform actions like logging in will receive an error. Any existing database should continue to be directly accessible, however.</p><p>We do not anticipate this will change in the foreseeable future.</p><p>We understand that this is not an ideal situation and we appreciate your understanding. If you need any help getting your data off the database with a tool like <code>mysqldump</code> or would like your account deleted, just let us know.</p><p>Thank you,</p><p>John Yerhot, Head of Support</p></blockquote><p>翻译过来就是</p><blockquote><p>您好，</p><p>我的名字是 John Yerhot，我负责 PlanetScale 支持团队。</p><p>今天早些时候，我们取消了所有从中国连接的用户对 PlanetScale 的访问权限。中国境内任何人尝试访问 PlanetScale Web 控制台或执行登录等操作都会收到错误消息。但是，任何现有的数据库都应该可以继续直接访问。</p><p>我们预计在可预见的未来这种情况不会改变。</p><p>我们知道这不是一个理想的情况，我们感谢您的理解。如果您需要任何帮助，使用类似工具将您的数据从数据库中<code>mysqldump</code>删除，或者希望您的帐户被删除，请告诉我们。</p><p>谢谢</p><p>支持主管 John Yerhot</p></blockquote><p><img src="https://static.dlya.top/img/planetscale_ban.jpg" alt="planetscale_ban.jpg" loading="lazy"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> planetscale </tag>
+            
+            <tag> 屏蔽 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记一次在Render上部署Cloudreve</title>
+      <link href="/posts/cloudreve-render/"/>
+      <url>/posts/cloudreve-render/</url>
+      
+        <content type="html"><![CDATA[<p>前几天在Github上看到了一个项目</p><p><a href="https://link.dlya.top/crrgh" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/Sakura1943/cloudreve-render</a></p><p>然后突然想起来自己的CloudReve不是1天就要掉线一次，而且还要手动重启，所以就有了以下的内容。</p><p>根据仓库的Readme.md可以知道作者大大给的部署教程，这里就不多说了，有需要的见链接。<a href="https://link.dlya.top/crrdocs" target="_blank" rel="noopener external nofollow noreferrer">https://blog.sakunia.tk/2022/03/30/render_cloudreve</a></p><p>然鹅。</p><p>在第一次部署的时候，发现日志内输出CloudReve版本是3.4.2。跟本文撰写时的最新版本（3.5.3)对不上。</p><p>于是乎。</p><p>我Fork了这个仓库，并更新了DockerFile内的Cloudreve版本。</p><p>支持原作者，但你也可以使用我Fork修改的版本。</p><p><a href="https://link.dlya.top/crghown" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/Guangsudalao/cloudreve-render</a><br><a href="https://link.dlya.top/crghgp" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/Guangsudalao-Studio/cloudreve-render</a></p><p>上述两个仓库将持续维护，更新cloudreve为最新版本！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Cloudreve </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> Cloudreve </tag>
+            
+            <tag> Render </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>注意</title>
+      <link href="/posts/warn-domain/"/>
+      <url>/posts/warn-domain/</url>
+      
+        <content type="html"><![CDATA[<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><blockquote><p>本站的旧域名guangsudalao.top即将在2022.08.19时过期，请有友链的博主尽快更换链接</p><p>博客名称：光速大佬的小站</p><p>博客介绍：独步天下，吾心自洁，无欲无求，如林中之象。</p><p>博客链接：<a href="https://blog.dlya.top/">https://blog.dlya.top</a></p><p>博客图片：<a href="https://cravatar.cn/avatar/7819c71a6100c1d8d7fa6b5b7bf961be?s=500&d=mm&r=g" target="_blank" rel="noopener external nofollow noreferrer">https://cravatar.cn/avatar/7819c71a6100c1d8d7fa6b5b7bf961be?s=500&amp;d=mm&amp;r=g</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 警告 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 警告 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>打包的（再见极域+多桌面工具）</title>
+      <link href="/posts/runexe/"/>
+      <url>/posts/runexe/</url>
+      
+        <content type="html"><![CDATA[<h2 id="打包的（再见极域-多桌面工具）"><a href="#打包的（再见极域-多桌面工具）" class="headerlink" title="打包的（再见极域+多桌面工具）"></a>打包的（再见极域+多桌面工具）</h2><blockquote><p>使用前请阅读!!<br>软件均为互联网上收集而来，这里仅作为收集整合！！<br>多桌面工具不能在Windows10上运行，不然会导致系统异常！！</p></blockquote><p><img src="https://static.dlya.top/img/Hexo/2022/8/0894e153225b87ce2d17c201d96d9273.webp" alt="https://static.dlya.top/img/Hexo/2022/8/0894e153225b87ce2d17c201d96d9273.webp" loading="lazy"></p><h2 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h2><blockquote><p><a href="https://file.dlya.top/app/Tools%20for%20It%20class.zip?preview" title="这里是直链" target="_blank" rel="noopener external nofollow noreferrer">这里是1号链接</a><br><a href="https://pan.dlya.top/s/ZxCN" title="这里是备用直链" target="_blank" rel="noopener external nofollow noreferrer">这里是备用链接</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> 极域 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Github+Vercel免费反代理域名</title>
+      <link href="/posts/vercel_github/"/>
+      <url>/posts/vercel_github/</url>
+      
+        <content type="html"><![CDATA[<h2 id="需要的材料"><a href="#需要的材料" class="headerlink" title="需要的材料"></a>需要的材料</h2><p>一个可以上Github的设备以及Github账号、Vercel账号</p><h2 id="本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！"><a href="#本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！" class="headerlink" title="本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！"></a>本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！</h2><p>如果需要使用Vercel-CLI的方法可以查看！参考资料:<a href="https://blog.ltya.top/tutorial/206.html" target="_blank" rel="noopener external nofollow noreferrer">https://blog.ltya.top/tutorial/206.html</a></p><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>新建一个Github储存库，仓库名自取，<a href="https://link.dlya.top/ghn" target="_blank" rel="noopener external nofollow noreferrer">点击这里直接创建</a>。</p><p>在储存库中新建vercel.json</p><p>其中内容如下</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;routes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/(.*)&quot;</span><span class="punctuation">,</span><span class="attr">&quot;dest&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://你的域名（带协议头）/$1&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>新建完之后<a href="https://link.dlya.top/vercelpx" target="_blank" rel="noopener external nofollow noreferrer">比如这样</a></p><p>注意替换这段文本’你的域名（带协议头）’</p><p>最后在<a href="https://link.dlya.top/vercel" target="_blank" rel="noopener external nofollow noreferrer">Vercel</a>上部署即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Vercel </category>
+          
+          <category> GitHub </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> Vercel </tag>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo持续部署</title>
+      <link href="/posts/hexo-auto-deploy/"/>
+      <url>/posts/hexo-auto-deploy/</url>
+      
+        <content type="html"><![CDATA[<p>部署方法:Vercel,Netlify,Cloudflare</p><h2 id="1-Vercel"><a href="#1-Vercel" class="headerlink" title="1.Vercel:"></a>1.Vercel:</h2><p><a href="https://link.dlya.top/hexosv" target="_blank" rel="noopener noreferrer"><img src="https://vercel.com/button" alt="Deploy with Vercel"></p><p><a href="https://link.dlya.top/hexosv" target="_blank" rel="noopener external nofollow noreferrer"></a></p><p>部署设置选择hexo。</p><p>不需要特殊设置，直接部署即可。</p><h1 id="Vercel的通用dns"><a href="#Vercel的通用dns" class="headerlink" title="Vercel的通用dns:"></a>Vercel的通用dns:</h1><p>指向 Vercel 的 A 记录值: 76.76.21.21</p><p>指向 Vercel 的 cname记录值为：cname.vercel-dns.com</p><h1 id="Vercel的中国dns"><a href="#Vercel的中国dns" class="headerlink" title="Vercel的中国dns:"></a>Vercel的中国dns:</h1><p>指向 Vercel 的 A 记录值: 76.223.126.88</p><p>指向 Vercel 的 cname记录值为：cname-china.vercel-dns.com</p><h2 id="2-Netlify"><a href="#2-Netlify" class="headerlink" title="2.Netlify:"></a>2.Netlify:</h2><p><a href="https://link.dlya.top/hexosn"><img src="https://www.netlify.com/img/deploy/button.svg" alt="" title="部署到 Netlify"></a></p><p>如果已经部署完成，可以在Netlify项目中的Site setting修改域名前缀。</p><h2 id="3-Cloudflare"><a href="#3-Cloudflare" class="headerlink" title="3.Cloudflare:"></a>3.Cloudflare:</h2><p>部署代码如下</p><p>npm install hexo-cli -g&amp;&amp;hexo clean&amp;&amp;hexo g</p><p>或者是</p><p>npm run build</p><p>输出目录：&#x2F;public</p><p><img src="https://static.dlya.top/img/Hexo/2022/8/b51afd44504caae6fa36a19e7b54c4e2.webp" alt="https://static.dlya.top/img/Hexo/2022/8/b51afd44504caae6fa36a19e7b54c4e2.webp" loading="lazy"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Vercel </tag>
+            
+            <tag> Netlify </tag>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>免费网站托管</title>
+      <link href="/posts/free-hosting/"/>
+      <url>/posts/free-hosting/</url>
+      
+        <content type="html"><![CDATA[<p>点击<a href="https://link.dlya.top/fwhost" target="_blank" rel="noopener external nofollow noreferrer">这里</a>进入首页<br>点击<a href="https://link.dlya.top/fwhost_siginup" target="_blank" rel="noopener external nofollow noreferrer">这里</a>进入注册页面<br>点击<a href="https://link.dlya.top/fwhost_panel" target="_blank" rel="noopener external nofollow noreferrer">这里</a>进入控制面板</p><p>PS：网站自带cloudflare加速</p><p>内置5个域名：</p><p><a href="https://fownhost.ml/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.ml</a></p><p><a href="https://fownhost.ga/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.ga</a></p><p><a href="https://fownhost.gq/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.gq</a></p><p><a href="https://fownhost.cf/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.cf</a></p><p><a href="https://fownhost.tk/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.tk</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> 免费 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> 免费网站托管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+    
+    
+    <entry>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="访问统计"><a href="#访问统计" class="headerlink" title="访问统计"></a>访问统计</h3><div id="statistic"><div class="content"></div><span style="font-size:14px">流量统计支持：<a style="color:#1690ff;" href="https://v6.51.la/">51la</a></span></div><!-- js --><script>// 链接替换即可，不需要后面的参数fetch('https://v6-widget.51.la/v6/Jz2dngqcmEJPWvpt/quote.js').then(res => res.text()).then((data) => {    let title = ['最近活跃访客', '今日人数', '今日访问', '昨日人数', '昨日访问', '本月访问', '总访问量']    let num = data.match(/(?<=<\/span><span>).*?(?=<\/span><\/p>)/g)    let order = [1, 3, 2, 4, 5] // 新增  可排序，如果需要隐藏则删除对应数字即可。    // 示例：[1, 3, 2, 4, 5] 显示 ['今日人数', '昨日人数', '今日访问', '昨日访问', '本月访问']，不显示 最近活跃访客(0) 和 总访问量(6)    for (let i = 0; i < order.length; i++) { document.querySelectorAll('#statistic .content')[0].innerHTML += '<div><span>' + title[order[i]] + '</span><span class="num">' + num[order[i]] + '</span></div>' }});// 老版本// for (let i = 0; i < num.length; i++) {//      // 自定义不显示哪个或者显示哪个，如下为不显示 最近活跃访客 和 总访问量//     if (i == 0 || i == num.length - 1) continue;//     s.innerHTML += '<div><span>' + title[i] + '</span><span class="num">' + num[i] + '</span></div>'// }// </script><h1 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h1><p>• 不定时coding。<br>• 游戏：Minecraft、原神</p><h2 id="©版权"><a href="#©版权" class="headerlink" title="©版权"></a>©版权</h2><p>本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="nofollow noopener">知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议</a>进行许可。如果你要转载文章，请询问作者，并以相同方式进行非商业性搬运，且转载请注明出处！</p><h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><div class="note info flat"><p>QQ:<a href="https://go.dlya.top/EmnWPtyxjp" target="_blank" rel="noopener external nofollow noreferrer">3272943566</a></p></div><div class="note info flat"><p>Telegram:<a href="https://go.dlya.top/kwYiJCWzDE" target="_blank" rel="noopener external nofollow noreferrer">guangsudalao</a></p></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>页面走丢了</title>
+      <link href="//404.html"/>
+      <url>//404.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>振奋人心的励志歌《Higher》：我在飞翔，追逐天际</title>
+      <link href="/archives/higher_song.html"/>
+      <url>/archives/higher_song.html</url>
+      
+        <content type="html"><![CDATA[<p>歌曲：Higher</p><p>歌手：Erik Grönwall</p><p>【振奋人心的励志歌《Higher》：我在飞翔，追逐天际-哔哩哔哩】<a href="https://b23.tv/T7vW21" target="_blank" rel="noopener external nofollow noreferrer">https://b23.tv/T7vW21</a></p><h2 id="歌曲歌词"><a href="#歌曲歌词" class="headerlink" title="歌曲歌词:"></a>歌曲歌词:</h2><p>Hey, I’m a believer</p><p>And gravity’s letting go of me tonight</p><p>You, came out of nowhere</p><p>When everything was passing by at the speed of light</p><p>嘿，我是一个有信仰的人</p><p>今晚，我会挣脱重力的束缚</p><p>你，突然从不知何处出现</p><p>当一切如光速般闪过</p><p>So hold my hand and never let me go</p><p>Take a leap of fate into the unknown</p><p>紧握我的手，别让我离开</p><p>信心百倍的面对未知世界</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p><p>Oh I know</p><p>It can be scary</p><p>You bet it all when your heart is on the line</p><p>But oh, baby don’t worry</p><p>Just hold my hand and never let me go</p><p>噢，我知道</p><p>这令人惧怕</p><p>当你决心已下，就要放手一搏</p><p>但是，宝贝，别担心</p><p>只管抓紧我的手，别让我离开</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p><p>Take me higher</p><p>I hold you as we’re shooting through the atmosphere</p><p>Around us everything disappears</p><p>带我高飞</p><p>我抱着你，我们直冲云霄</p><p>身边的一切都烟消云散</p><p>Woah oa oa</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>噢…</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>这才是玄学与爆肝的力量！</title>
+      <link href="/archives/yuanshen_ganyu.html"/>
+      <url>/archives/yuanshen_ganyu.html</url>
+      
+        <content type="html"><![CDATA[<p>先是把班尼特在月海亭摔死，在落地的一瞬间打开祈愿，一发入魂，中甘雨!</p><p><img src="https://static.dlya.top/img/Hexo/2022/8/6487753c4f0f6e4b0e4437ab1ce71bc8.webp" alt="https://static.dlya.top/img/Hexo/2022/8/6487753c4f0f6e4b0e4437ab1ce71bc8.webp" loading="lazy"></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>钟离到手</title>
+      <link href="/archives/yuanshen_zhongli.html"/>
+      <url>/archives/yuanshen_zhongli.html</url>
+      
+        <content type="html"><![CDATA[<p>大保底 70+12发出的</p><p><img src="https://static.dlya.top/img/Hexo/2022/8/2275f7cebd49a7e5f30da6eebb9952a2.webp" alt="https://static.dlya.top/img/Hexo/2022/8/2275f7cebd49a7e5f30da6eebb9952a2.webp" loading="lazy"></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/loading.css"/>
+      <url>/css/loading.css</url>
+      
+        <content type="html"><![CDATA[.pace {  pointer-events: none;  user-select: none;  z-index: 2;  position: fixed;  margin: auto;  top: 4px;  left: 0;  right: 0;  height: 8px;  border-radius: 8px;  width: 6rem;  background: #eaecf2;  overflow: hidden;}.pace-inactive .pace-progress {  opacity: 0;  transition: 0.3s ease-in;}.pace.pace-inactive {  opacity: 0;  transition: 0.3s;  top: -8px;}.pace .pace-progress {  box-sizing: border-box;  transform: translate3d(0, 0, 0);  position: fixed;  z-index: 2;  display: block;  position: absolute;  top: 0;  right: 100%;  height: 100%;  width: 100%;  background: #49b1f5;  background: linear-gradient(    to right,    rgb(18, 194, 233),    rgb(196, 113, 237),    rgb(246, 79, 89)  );  animation: gradient 2s ease infinite;  background-size: 200%;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/statistics.css"/>
+      <url>/css/statistics.css</url>
+      
+        <content type="html"><![CDATA[#statistic {    font-size: 18px;    padding: 20px;    border-radius: 12px;    width: 100%;    color: var(--font-color);    background-color: var(--card-bg);}div#statistic .content {    display: flex;    flex-wrap: wrap;    justify-content: space-between;}div#statistic a {    text-decoration: none;}#statistic .content div {    display: inline-block;}#statistic div span {    font-size: 14px;    line-height: 1.3;    display: block;}#statistic div .num {    letter-spacing: 1px;    font-weight: bold;    font-size: 2rem;    margin-bottom: .8rem;    white-space: nowrap;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>朋友圈</title>
+      <link href="/fcircle/index.html"/>
+      <url>/fcircle/index.html</url>
+      
+        <content type="html"><![CDATA[<div id="hexo-circle-of-friends-root"></div><script>    let UserConfig = {        // 填写你的api地址        private_api_url: 'https://fcircle.api.dlya.top/',        // 点击加载更多时，一次最多加载几篇文章，默认10        page_turning_number: 10,        // 头像加载失败时，默认头像地址        error_img: 'https://avatar.dlya.top/avatar/57d8260dfb55501c37dde588e7c3852c',        // 进入页面时第一次的排序规则        sort_rule: 'created'    }</script><script type="text/javascript" src="https://npm.assests.dlya.top/fcircle-theme-yyyz@1.0.5/dist/app.min.js"></script><script type="text/javascript" src="https://npm.assests.dlya.top/fcircle-theme-yyyz@1.0.5/dist/bundle.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/baidu-pusher.js"/>
+      <url>/js/baidu-pusher.js</url>
+      
+        <content type="html"><![CDATA[<script>(function(){    var bp = document.createElement('script');    var curProtocol = window.location.protocol.split(':')[0];    if (curProtocol === 'https') {        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';    }    else {        bp.src = 'http://push.zhanzhang.baidu.com/push.js';    }    var s = document.getElementsByTagName("script")[0];    s.parentNode.insertBefore(bp, s);})();</script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/gg-ad-ms.js"/>
+      <url>/js/gg-ad-ms.js</url>
+      
+        <content type="html"><![CDATA[<script async src="https://fundingchoicesmessages.google.com/i/pub-1740703495762927?ers=1" nonce="YhSE2L0x5dvvtk0E6mKirw"></script><script nonce="YhSE2L0x5dvvtk0E6mKirw">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/redirects-obs.js"/>
+      <url>/js/redirects-obs.js</url>
+      
+        <content type="html"><![CDATA[const _0x58251a=_0x434a;(function(_0x31d472,_0x2c13bb){const _0x589895=_0x434a,_0x21d14b=_0x31d472();while(!![]){try{const _0x397f92=parseInt(_0x589895(0x177))/0x1+-parseInt(_0x589895(0x176))/0x2*(-parseInt(_0x589895(0x173))/0x3)+parseInt(_0x589895(0x17e))/0x4+-parseInt(_0x589895(0x179))/0x5*(parseInt(_0x589895(0x171))/0x6)+-parseInt(_0x589895(0x166))/0x7+parseInt(_0x589895(0x167))/0x8*(parseInt(_0x589895(0x172))/0x9)+-parseInt(_0x589895(0x16d))/0xa;if(_0x397f92===_0x2c13bb)break;else _0x21d14b['push'](_0x21d14b['shift']());}catch(_0x370041){_0x21d14b['push'](_0x21d14b['shift']());}}}(_0x4b70,0x37d97));function _0x434a(_0x702c05,_0xd88152){const _0x37bfb5=_0x4b70();return _0x434a=function(_0x3c71da,_0x129c46){_0x3c71da=_0x3c71da-0x158;let _0x110e17=_0x37bfb5[_0x3c71da];return _0x110e17;},_0x434a(_0x702c05,_0xd88152);}const _0x496751=(function(){let _0x174432=!![];return function(_0x1f687f,_0x3dddf1){const _0x43076a=_0x174432?function(){const _0x203fd4=_0x434a;if(_0x3dddf1){const _0x32fbb7=_0x3dddf1[_0x203fd4(0x17f)](_0x1f687f,arguments);return _0x3dddf1=null,_0x32fbb7;}}:function(){};return _0x174432=![],_0x43076a;};}()),_0x2d9137=_0x496751(this,function(){const _0x51e22f=_0x434a;return _0x2d9137[_0x51e22f(0x170)]()[_0x51e22f(0x16a)](_0x51e22f(0x175))[_0x51e22f(0x170)]()['constructor'](_0x2d9137)[_0x51e22f(0x16a)](_0x51e22f(0x175));});_0x2d9137();function _0x4b70(){const _0x4aac6d=['indexOf','init','http://blog.dlya.top','location','function\x20*\x5c(\x20*\x5c)','debu','length','blog.dlya.top','{}.constructor(\x22return\x20this\x22)(\x20)','setInterval','href','2550667cDugfQ','785672WzoMRH','gsdl.vercel.app','input','search','guangsudalao.github.io','action','4698300QTjzEb','stateObject','gsdl.netlify.app','toString','450DjUySb','9vAMZoo','627IHcSez','gger','(((.+)+)+)+$','4362FcYrfJ','226614EMQCrs','\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)','11320JcPyKt','constructor','while\x20(true)\x20{}','dev.preview.dlya.top','counter','1808472ZSeaOo','apply','string','test','call'];_0x4b70=function(){return _0x4aac6d;};return _0x4b70();}const _0x129c46=(function(){let _0x1bfa12=!![];return function(_0x375212,_0x33269e){const _0x1ca60f=_0x1bfa12?function(){const _0x551b9e=_0x434a;if(_0x33269e){const _0x37c4a9=_0x33269e[_0x551b9e(0x17f)](_0x375212,arguments);return _0x33269e=null,_0x37c4a9;}}:function(){};return _0x1bfa12=![],_0x1ca60f;};}());(function(){const _0x6501ec=_0x434a,_0x2d0990=function(){const _0x1cc2de=_0x434a;let _0x642b09;try{_0x642b09=Function('return\x20(function()\x20'+_0x1cc2de(0x163)+');')();}catch(_0x5b412d){_0x642b09=window;}return _0x642b09;},_0x337733=_0x2d0990();_0x337733[_0x6501ec(0x164)](_0x3c71da,0xfa0);}()),(function(){_0x129c46(this,function(){const _0x124c65=_0x434a,_0x4585a4=new RegExp(_0x124c65(0x15f)),_0x4382b0=new RegExp(_0x124c65(0x178),'i'),_0x2e22f2=_0x3c71da(_0x124c65(0x15c));!_0x4585a4[_0x124c65(0x159)](_0x2e22f2+'chain')||!_0x4382b0[_0x124c65(0x159)](_0x2e22f2+_0x124c65(0x169))?_0x2e22f2('0'):_0x3c71da();})();}());const validDomains=[_0x58251a(0x162),_0x58251a(0x17c),_0x58251a(0x16f),_0x58251a(0x168),'gsdl.pages.dev',_0x58251a(0x16b)];try{validDomains[_0x58251a(0x15b)](document[_0x58251a(0x15e)]['hostname']+':'+document[_0x58251a(0x15e)]['port'])===-0x1&&(window['location'][_0x58251a(0x165)]=_0x58251a(0x15d));}catch(_0x24ceca){}function _0x3c71da(_0x3fbf9c){function _0x238d75(_0xe52a5b){const _0x445de8=_0x434a;if(typeof _0xe52a5b===_0x445de8(0x158))return function(_0x246668){}[_0x445de8(0x17a)](_0x445de8(0x17b))[_0x445de8(0x17f)](_0x445de8(0x17d));else(''+_0xe52a5b/_0xe52a5b)[_0x445de8(0x161)]!==0x1||_0xe52a5b%0x14===0x0?function(){return!![];}['constructor'](_0x445de8(0x160)+_0x445de8(0x174))[_0x445de8(0x15a)](_0x445de8(0x16c)):function(){return![];}[_0x445de8(0x17a)](_0x445de8(0x160)+_0x445de8(0x174))[_0x445de8(0x17f)](_0x445de8(0x16e));_0x238d75(++_0xe52a5b);}try{if(_0x3fbf9c)return _0x238d75;else _0x238d75(0x0);}catch(_0x2763b7){}}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/redirects.js"/>
+      <url>/js/redirects.js</url>
+      
+        <content type="html"><![CDATA[const validDomains = [ 'blog.dlya.top', 'dev.preview.dlya.top', 'gsdl.netlify.app', 'gsdl.vercel.app',  'gsdl.pages.dev', 'guangsudalao.github.io'] try {   if (validDomains.indexOf(document.location.hostname +':'+ document.location.port) === -1) {    window.location.href = 'http://blog.dlya.top'; }} catch(e) {}   ]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[<p>以上排名不分先后顺序。</p><p>要求：</p><p>1.博客运行时间：≥14days</p><p>2.不含有色情、暴力、敏感的内容（尤其是政治敏感）</p><p>3.不未经授权搬运他人文章</p><p>4.要求优质文章≥3篇</p><p>加入友链时需要先添加本站友链，并且按照以下格式要求评论，审核结果将在评论区留言：</p><p>博客图片建议使用gravatar镜像，且下面的图片链接你可以自由地替换成任意gravatar镜像</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">博客名称：光速大佬的小站</span><br><span class="line"></span><br><span class="line">博客介绍：独步天下，吾心自洁，无欲无求，如林中之象。</span><br><span class="line"></span><br><span class="line">博客链接：https://blog.dlya.top</span><br><span class="line"></span><br><span class="line">博客图片：https://cravatar.cn/avatar/7819c71a6100c1d8d7fa6b5b7bf961be?s=500&amp;d=mm&amp;r=g</span><br></pre></td></tr></table></figure>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>说说</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
+      
+        <content type="html"><![CDATA[<script src="https://fastly.jsdelivr.net/npm/qexo-static@1.5.1/hexo/talks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qexo-static@1.5.1/hexo/talks.min.css"><div id="qexot"></div><script>showQexoTalks("qexot", "https://admin.dlya.top", 5)</script>]]></content>
+      
+    </entry>
+    
+    
+  
+</search>
