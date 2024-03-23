@@ -1,0 +1,5 @@
+# robots.txt
+User-agent: *
+Sitemap: https://blog.dlya.top/atom.xml
+Sitemap: https://blog.dlya.top/sitemap.xml
+Sitemap: https://blog.dlya.top/baidusitemap.xml

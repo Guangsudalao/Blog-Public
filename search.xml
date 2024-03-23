@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>vercel优选IP食用方法</title>
+      <link href="/posts/vercel_better_ip/"/>
+      <url>/posts/vercel_better_ip/</url>
+      
+        <content type="html"><![CDATA[<h1 id="随便说说"><a href="#随便说说" class="headerlink" title="随便说说"></a>随便说说</h1><p>vercel总归是逃不过被滥用的结局，随着越来越多的站长将网站部署到vercel上，带宽对于大陆总归有限，在网络高峰期时vercel的延迟就有些不怎么理想了。</p><p>但是也有人说怎么不部署在cloudflare上呢？</p><p><img src="https://static.dlya.top/img/Hexo/24/2/226efcdac9ffd5865a913341828871c8.jpg" alt="https://static.dlya.top/img/Hexo/24/2/226efcdac9ffd5865a913341828871c8.jpg" loading="lazy"></p><p>那当我掏出这张图的时候，阁下又该如何应对呢（手动狗头）</p><p>在高峰期的vercel与大陆的连接少至1s左右，多至10s以上，那又该如何解决这个问题呢。</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>要知道cdn的加速原理就是在用户靠近的地方的服务器上加载内容与分发的。而可以参考ChenYFan的<a href="https://gist.github.com/ChenYFan/fc2bd4ec1795766f2613b52ba123c0f8" target="_blank" rel="noopener external nofollow noreferrer">Vercel All ip</a><br>这里列出IP地址，以供打不开github的站长参考</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">34.95.57.145 [加拿大 魁北克省蒙特利尔 Google 云计算数据中心]</span><br><span class="line">13.49.54.242 [瑞典 斯德哥尔摩 Amazon 数据中心]</span><br><span class="line">18.178.194.147 [日本 东京都东京 Amazon 数据中心]</span><br><span class="line">52.79.72.148 [韩国 首尔 Amazon 数据中心]</span><br><span class="line">35.180.16.12 [法国 巴黎 Amazon 数据中心]</span><br><span class="line">18.206.69.11 [美国 弗吉尼亚州阿什本 Amazon 数据中心]</span><br><span class="line">52.76.85.65 [新加坡 Amazon 数据中心]</span><br><span class="line">18.130.52.74 [英国 伦敦 Amazon 数据中心]</span><br><span class="line">35.202.100.12 [美国 Merit 网络公司]</span><br><span class="line">35.195.188.93 [比利时 瓦隆大区圣吉斯兰 Google 云计算数据中心]</span><br><span class="line">3.22.103.24 [美国 Amazon EC2 服务器]</span><br><span class="line">34.253.160.225 [爱尔兰 都柏林 Amazon 数据中心]</span><br><span class="line">18.229.231.184 [巴西]</span><br><span class="line">15.206.54.182 [美国 惠普 HP]</span><br><span class="line">35.235.101.253 [美国 加利福尼亚州洛杉矶 Google 云计算数据中心]</span><br><span class="line">35.196.196.42 [美国 Merit 网络公司]</span><br><span class="line">35.228.53.122 [美国 俄勒冈州达尔斯 Google 云计算数据中心]</span><br><span class="line">34.65.228.161 [美国 得克萨斯州]</span><br><span class="line">52.38.79.87 [美国 俄勒冈州波特兰 Amazon 数据中心]</span><br><span class="line">13.238.105.1 [澳大利亚 新南威尔士州悉尼 Amazon 数据中心]</span><br><span class="line">104.199.217.228 [台湾省彰化县 Google 云计算数据中心]</span><br><span class="line">52.9.164.177 [美国 加利福尼亚州旧金山 Amazon 数据中心]</span><br><span class="line">18.162.37.140 [香港 Amazon 数据中心]</span><br></pre></td></tr></table></figure><p>在vercel默认将大陆ip anycast到香港节点时，而香港节点的带宽又不足以提供需求，可以将dns手动解析到vercel上面的节点当中。通常来说解析到新加坡、台湾的节点会获得更佳的访问速度。</p><p>但是对于移动而言这样的加速效果不大，对于电信与联通线路有一定的提升。而104.199.217.228只有电信相对较快，18.162.37.140电信方面加速不明显，突出的是移动与联通方面，但是不太稳定。</p><p>可以结合dnspod进行手动解析食用<br><a href="https://blog.dlya.top/posts/vercel_better_ip/#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2">提醒</a></p><h2 id="测速工具截图"><a href="#测速工具截图" class="headerlink" title="测速工具截图"></a>测速工具截图</h2><p>测速工具推荐<br><a href="https://zhale.me/http/" target="_blank" rel="noopener external nofollow noreferrer">炸了么</a><br><a href="https://www.itdog.cn/http/" target="_blank" rel="noopener external nofollow noreferrer">ITdog</a></p><p><img src="https://static.dlya.top/img/Hexo/24/2/d46a84159ac171bef50277da15441ed7.jpeg" alt="https://static.dlya.top/img/Hexo/24/2/d46a84159ac171bef50277da15441ed7.jpeg" loading="lazy"></p><h1 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h1><p>任何的优选IP的玩法都有可能随时失效，不仅限于访问超时、IP被阻断、偶发高延迟等等，请谨慎考虑后食用。</p><h2 id="灵感来源与参考"><a href="#灵感来源与参考" class="headerlink" title="灵感来源与参考"></a>灵感来源与参考</h2><p><a href="https://www.yt-blog.top/9952/" target="_blank" rel="noopener external nofollow noreferrer">推一下 Vercel 加速节点 - Fgaoxing_Fgaoxing的个人博客 (yt-blog.top)</a></p><p><a href="https://gist.github.com/ChenYFan/fc2bd4ec1795766f2613b52ba123c0f8" target="_blank" rel="noopener external nofollow noreferrer">Vercel All IP - ChenYFan (gist.github.com)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vercel </tag>
+            
+            <tag> IP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>整活</title>
+      <link href="/posts/3coutryfun/"/>
+      <url>/posts/3coutryfun/</url>
+      
+        <content type="html"><![CDATA[<p>好久没更新了，来整点活~</p><iframe src="//player.bilibili.com/player.html?bvid=BV1UB421k7gQ&page=1&high\_quality=1&danmaku=0" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe><p><a href="https://www.bilibili.com/video/BV1UB421k7gQ/" target="_blank" rel="noopener external nofollow noreferrer">https://www.bilibili.com/video/BV1UB421k7gQ/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 鬼畜 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 鬼畜 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>折腾日记：部署在vercel上的短链接</title>
+      <link href="/posts/vercel_short_link/"/>
+      <url>/posts/vercel_short_link/</url>
+      
+        <content type="html"><![CDATA[<p>这段时间在折腾短链接，顺手就整理了一下</p><h2 id="来自Thewbear的短链接"><a href="#来自Thewbear的短链接" class="headerlink" title="来自Thewbear的短链接"></a>来自<a href="https://link.dlya.top/shorturltgh" target="_blank" rel="noopener external nofollow noreferrer">Thewbear</a>的短链接</h2><blockquote><h2 id="需要的材料"><a href="#需要的材料" class="headerlink" title="需要的材料"></a>需要的材料</h2><p> 一个<del>vercel和GitHub账号</del>这不是废话吗</p></blockquote><p>这边直接上仓库链接<br><a href="https://link.dlya.top/shorturltgh" target="_blank" rel="noopener external nofollow noreferrer">Github仓库</a></p><p>点击下面的按钮就可以部署啦<br><a href="https://link.dlya.top/shorturltv" target="_blank" rel="noopener external nofollow noreferrer"><img src="https://static.dlya.top/img/vercel/vercel-deploy-button.svg" alt="Deploy with Vercel" loading="lazy"></a></p><p>这边贴上redirects.yml的语法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- from: /baidu</span><br><span class="line">  to: https://baidu.com</span><br><span class="line">  status: 308 #更改状态码，例如301、302、307(默认)、308</span><br><span class="line">- from: /google/:q #精确匹配一个比如说 /google/:q</span><br><span class="line">  to: https://google.com/search?q=:q</span><br><span class="line">- from: /vercel/:slug* #匹配零个或多个比如说 /vercel/ vercel/docs</span><br><span class="line">  to: https://vercel.com/:slug</span><br><span class="line">- from: /github/:slug+ #一个或多个执行/github/ThewApp github/ThewApp/vercel-shorturl</span><br><span class="line">  to: https://github.com/:slug</span><br><span class="line">- from: /dev/:slug1/:slug2 #多个匹配例子 /dev/p/information</span><br><span class="line">  to: https://dev.to/:slug1/:slug2</span><br><span class="line">- from: /google</span><br><span class="line">  to: https://google.com/search?q=:q</span><br><span class="line">  query:</span><br><span class="line">    action: search #必须有这个精确的查询</span><br><span class="line">    q: :q #这个匹配再查询比如说 /google?action = search&amp;q =recursion</span><br><span class="line">- from: /dev</span><br><span class="line">  to: https://dev.to/:user</span><br><span class="line">  query:</span><br><span class="line">    u: :user? #可选匹配ex. /dev /dev?u = thewbear</span><br></pre></td></tr></table></figure><h2 id="来自Steven-tey的Dub"><a href="#来自Steven-tey的Dub" class="headerlink" title="来自Steven-tey的Dub"></a>来自<a href="https://link.dlya.top/dubgho" target="_blank" rel="noopener external nofollow noreferrer">Steven-tey</a>的<a href="https://link.dlya.top/dubgh" target="_blank" rel="noopener external nofollow noreferrer">Dub</a></h2><p>这个项目暂时还不是特别好用，感觉自托管在部署上比较繁琐，有兴趣的可以试试。</p><p>也可以在<a href="https://link.dlya.top/dub" target="_blank" rel="noopener external nofollow noreferrer">Dub.sh</a>托管自己的域名，但是需要一个咕鸽账号或者一个邮箱。域名绑定之后，直接cname解析到cname.vercel-dns.com，以及添加给出的txt记录验证就行了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Vercel </category>
+          
+          <category> GitHub </category>
+          
+          <category> 短链接 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> Vercel </tag>
+            
+            <tag> GitHub </tag>
+            
+            <tag> 短链接 </tag>
+            
+            <tag> Shorturl </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Github 2FA详解使用过程</title>
+      <link href="/posts/github_2fa/"/>
+      <url>/posts/github_2fa/</url>
+      
+        <content type="html"><![CDATA[<h1>开篇</h1><p>GitHub是一个面向开源及私有软件项目的托管平台,因为只支持Git作为唯一的版本库格式进行托管,故名GitHub。</p><p>而最近的一段时间里,Github宣布要求对有一定数量贡献的开发者强制启用2fa(即两步验证)。相当于给账号多加了一层锁。<br><img src="https://static.dlya.top/img/Hexo/2023/4/44a894a74e7c06f1229f6b0daeef0987.png" alt="github_contributions" loading="lazy"></p><h1 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h1><p>来到<a href="https://link.dlya.top/ghsec" target="_blank" rel="noopener external nofollow noreferrer">Account security (github.com)</a>这个页面<br><img src="https://static.dlya.top/img/Hexo/2023/4/fefa07aef9f5bff2aa350a6595a54e6d.png" alt="settings_pages" loading="lazy"></p><p>具体是登录GitHub账号,选择右上方头像当中的”settings“,再选择 “Password and authentication” ,然后选择Enable two-factor authentication</p><h1 id="TOTP验证器"><a href="#TOTP验证器" class="headerlink" title="TOTP验证器"></a>TOTP验证器</h1><h2 id="使用Microsoft-Authenticator"><a href="#使用Microsoft-Authenticator" class="headerlink" title="使用Microsoft Authenticator"></a>使用Microsoft Authenticator</h2><p>通过这条<a href="https://link.dlya.top/msauth" target="_blank" rel="noopener external nofollow noreferrer">中国公有云中-android-的-authenticator</a>链接可得知，在咕鸽商店无法访问的情况下，Microsoft Authenticator仍可下载。<br>点击<a href="https://link.dlya.top/msauth" target="_blank" rel="noopener external nofollow noreferrer">这里前往下载</a></p><h2 id="使用Protecc"><a href="#使用Protecc" class="headerlink" title="使用Protecc"></a>使用Protecc</h2><p>例如微软商店里的Protecc,是一个在 Windows 上的开源两步验证器。支持几乎所有使用 TOTP 算法的账号,还有一些内置的隐私保护措施,例如隐私屏障和代码模糊。还有,Protecc 还支持用 Windows Hello 来登录,以及二维码导入(需要相机权限)。还可以导出验证密钥来备份。</p><p><a href="https://link.dlya.top/prccms" target="_blank" rel="noopener external nofollow noreferrer">Protecc - 两步 TOTP 验证器</a></p><p><img src="https://static.dlya.top/img/Hexo/2023/4/4e88d523b6aa8f42eec31e8db6ced56f.png" alt="商店页面" loading="lazy"></p><p>安装完成之后打开软件<br><img src="https://static.dlya.top/img/Hexo/2023/4/7659a6f2452cffaece375fb6f1bac2ca.png" alt="按钮" loading="lazy"></p><p>选择上方的 <strong>“Enter Key”</strong></p><p><img src="https://static.dlya.top/img/Hexo/2023/4/9ecd63303d7d233f43a856e565218224.png" alt="打开添加页面" loading="lazy"></p><p>在Name中填入你注册Github时使用的邮箱,Key中填入在GitHub上获取到的密钥(如下图中所示)</p><p><img src="https://static.dlya.top/img/Hexo/2023/4/ae00de75aeedea1e8d8352a657562b35.png" alt="App secret" loading="lazy"></p><p>填写完成后点击下方的Next就可以使用了。</p><h2>参考</h2><p><a href="https://link.dlya.top/prccgh" target="_blank" rel="noopener external nofollow noreferrer">FireCubeStudios&#x2F;Protecc: It protecc (github.com)</a></p><p><a href="https://link.dlya.top/ghbk" target="_blank" rel="noopener external nofollow noreferrer">Github_百度百科 (baidu.com)</a></p><p><a href="https://link.dlya.top/msauth" target="_blank" rel="noopener external nofollow noreferrer">中国公有云中-android-的-authenticator</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2fa </category>
+          
+          <category> Github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> Protectcc </tag>
+            
+            <tag> TOTP </tag>
+            
+            <tag> 2fa </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>用Cloudflare workers为freenom域名续期</title>
+      <link href="/posts/freenom_with_cloudflare/"/>
+      <url>/posts/freenom_with_cloudflare/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://link.dlya.top/fwgh" target="_blank" rel="noopener external nofollow noreferrer">Github仓库地址</a><br>通过Cloudflare Workers自动续期Freenom域名<br>由<a href="https://link.dlya.top/fwgho" target="_blank" rel="noopener external nofollow noreferrer">PencilNavigator</a>制作</p><h2 id="首先进入workers-cloudflare-com新建一个workers"><a href="#首先进入workers-cloudflare-com新建一个workers" class="headerlink" title="首先进入workers.cloudflare.com新建一个workers"></a>首先进入<a href="https://link.dlya.top/cfw" target="_blank" rel="noopener external nofollow noreferrer">workers.cloudflare.com</a>新建一个workers</h2><p>在快速编辑里面复制<a href="https://link.dlya.top/fwghj" target="_blank" rel="noopener external nofollow noreferrer">这里的代码</a></p><h2 id="然后进入到变量页面填写信息"><a href="#然后进入到变量页面填写信息" class="headerlink" title="然后进入到变量页面填写信息"></a>然后进入到变量页面填写信息</h2><p><img src="https://static.dlya.top/img/freenom/freenom_bl.jpg" alt="变量" loading="lazy"><br>填写完成后就如这样<br>也可以勾选右侧的变量加密按钮，可以降低信息泄露的危险<br><img src="https://static.dlya.top/img/freenom/freenom_bl_finish.png" alt="变量" loading="lazy"></p><h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><p>进入触发器页面，在“添加Cron触发器”界面，设置触发器并且保存。推荐执行时间为一天一次。</p><h1 id="一些Cron的例子"><a href="#一些Cron的例子" class="headerlink" title="一些Cron的例子"></a>一些Cron的例子</h1><hr><table><thead><tr><th>时间</th><th>代码</th></tr></thead><tbody><tr><td>每分钟</td><td>* * * * *</td></tr><tr><td>每30分钟</td><td>*&#x2F;30 * * * *</td></tr><tr><td>每个小时的第45分钟</td><td>45 * * * *</td></tr><tr><td>在星期天的17：00</td><td>0 17 * * sun or 0 17 * * 1</td></tr><tr><td>工作日早上7：10</td><td>10 7 * * mon-fri or 10 7 * * 2-6</td></tr><tr><td>每月的第一天下午3点</td><td>0 15 1 * *</td></tr><tr><td>每月的最后一个星期五的18：00</td><td>0 18 * * 6L or 0 18 * * friL</td></tr><tr><td>每月最后一个工作日的23：59</td><td>23 59 LW * *</td></tr></tbody></table><hr><h2 id="其他的一些要点"><a href="#其他的一些要点" class="headerlink" title="其他的一些要点"></a>其他的一些要点</h2><p>由于*.workers.dev在国内污染严重，建议在触发器页面内绑定自己域名使用。<br>尽量禁用默认的*.workers.dev域名。</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://link.dlya.top/cfcrt" target="_blank" rel="noopener external nofollow noreferrer">https://developers.cloudflare.com/workers/platform/triggers/cron-triggers/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> freenom </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> freenom </tag>
+            
+            <tag> cloudflare </tag>
+            
+            <tag> cloudflare workers </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>月度总结</title>
+      <link href="/posts/2022.11.12/"/>
+      <url>/posts/2022.11.12/</url>
+      
+        <content type="html"><![CDATA[<p>咕咕了这么久</p><p>终于有时间回来更新了(<del>水</del>)</p><p>距离上一次更新是将近2个月前的事情了</p><p>首先呢，原神抽到了纳西妲和专武</p><p><img src="https://static.dlya.top/img/naxida.jpg" alt="纳西妲(自己的忘了截图，盗的)" loading="lazy"></p><p>至于为什么抽到专武，是因为原本想抽宵宫专武飞雷的</p><p>结果就中了纳西妲专武</p><p><img src="https://static.dlya.top/img/ys_2022-11-12_164430.jpg" alt="武器池" loading="lazy"></p><p><img src="https://static.dlya.top/img/ys_2022-11-12_165654.jpg" alt="专武" loading="lazy"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>构建自己的云上工作流-Hexo自动部署</title>
+      <link href="/posts/hexo-auto-deploy-2/"/>
+      <url>/posts/hexo-auto-deploy-2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Hexo,一个快速、简洁且高效的博客框架。在各种的插件与主题之下，结合管理面板使用，可以与其获得与WordPress和typecho相媲美的优势所在。</p><h1 id="通过示例Github仓库构建"><a href="#通过示例Github仓库构建" class="headerlink" title="通过示例Github仓库构建"></a><a href="https://link.dlya.top//hexoexgh" target="_blank" rel="noopener external nofollow noreferrer">通过示例Github仓库构建</a></h1><p>内部版本:</p><p>主程序：<br>      Hexo：6.3.0</p><p>主题：<br>      Hexo-theme-butterfly：4.8.5<br>      Yun主题已经分支，有需要可前往<a href="https://link.dlya.top/hexoexghy" target="_blank" rel="noopener external nofollow noreferrer">Yun分支下查看</a>，主分支已经更新为Butterfly主题!<br>      <del>Hexo-theme-yun：1.10.9</del></p><h2 id="部署到Vercel"><a href="#部署到Vercel" class="headerlink" title="部署到Vercel"></a>部署到Vercel</h2><p><a href="https://link.dlya.top/hexoexav" target="_blank" rel="noopener noreferrer"><img src="https://vercel.com/button" alt="Deploy with Vercel"></p><p><a href="https://link.dlya.top/hexoexav" target="_blank" rel="noopener external nofollow noreferrer"></a></p><h2 id="部署到Netlify"><a href="#部署到Netlify" class="headerlink" title="部署到Netlify"></a>部署到Netlify</h2><p><a href="https://link.dlya.top/hexoexan"><img src="https://www.netlify.com/img/deploy/button.svg" alt="" title="部署到 Netlify"></a></p><h2 id="部署到Cloudflare-Pages"><a href="#部署到Cloudflare-Pages" class="headerlink" title="部署到Cloudflare Pages"></a>部署到Cloudflare Pages</h2><p>建议通过以上两种方式构建仓库之后，再用git方式添加到pages部署</p><h1 id="用Github-Action部署"><a href="#用Github-Action部署" class="headerlink" title="用Github Action部署"></a>用Github Action部署</h1><h2 id="私有方式部署-指部署仓库私有"><a href="#私有方式部署-指部署仓库私有" class="headerlink" title="私有方式部署(指部署仓库私有)"></a>私有方式部署(指部署仓库私有)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">name: Deploy By GitHub Pages</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main</span><br><span class="line">jobs:</span><br><span class="line">  deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    steps:</span><br><span class="line">      - uses: actions/checkout@v2  - name: Setup Node</span><br><span class="line">    uses: actions/setup-node@v2</span><br><span class="line">    with:</span><br><span class="line">      node-version: 16.x</span><br><span class="line"></span><br><span class="line">  - name: Install Dependencies</span><br><span class="line">    run: npm i</span><br><span class="line">  - run: npm run build</span><br><span class="line"></span><br><span class="line">  - name: Deploy</span><br><span class="line">    uses: peaceiris/actions-gh-pages@v3</span><br><span class="line">    with:</span><br><span class="line">      personal_token: $&#123;&#123; secrets.PERSONAL_TOKEN &#125;&#125;</span><br><span class="line">      external_repository: 你的Github用户名/你的Github仓库名</span><br><span class="line">      publish_dir: ./public</span><br><span class="line">      publish_branch: gh-pages</span><br><span class="line">      force_orphan: true</span><br></pre></td></tr></table></figure><h2 id="公有方式部署-指部署仓库公有"><a href="#公有方式部署-指部署仓库公有" class="headerlink" title="公有方式部署(指部署仓库公有)"></a>公有方式部署(指部署仓库公有)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  name: Deploy By GitHub Pages</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main</span><br><span class="line">jobs:</span><br><span class="line">  deploy:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    steps:</span><br><span class="line">      - uses: actions/checkout@v2</span><br><span class="line"></span><br><span class="line">      - name: Setup Node</span><br><span class="line">        uses: actions/setup-node@v2</span><br><span class="line">        with:</span><br><span class="line">          node-version: 16.x</span><br><span class="line"></span><br><span class="line">      - name: Install Dependencies</span><br><span class="line">        run: npm i</span><br><span class="line">      - run: npm run build</span><br><span class="line"></span><br><span class="line">      - name: Deploy</span><br><span class="line">        uses: peaceiris/actions-gh-pages@v3</span><br><span class="line">        with:</span><br><span class="line">          github_token: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</span><br><span class="line">          publish_dir: ./public</span><br><span class="line">          publish_branch: gh-pages</span><br><span class="line">          force_orphan: true</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Vercel </tag>
+            
+            <tag> Netlify </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Planetscale已将中国的访问屏蔽</title>
+      <link href="/posts/planetscale_ban/"/>
+      <url>/posts/planetscale_ban/</url>
+      
+        <content type="html"><![CDATA[<p>在本文发表的早些时候，app.planetscale.com屏蔽了所有来自中国的连接请求，并且返回了404和500错误，现有的任何储存库不会造成任何影响。但是无法登陆控制面板。</p><p>客服回复如下</p><blockquote><p>Hello,</p><p>My name is John Yerhot and I am responsible for the PlanetScale Support team.</p><p>Earlier today we removed access to PlanetScale for all users connecting from China. Anyone from within China attempting to access the PlanetScale web console or perform actions like logging in will receive an error. Any existing database should continue to be directly accessible, however.</p><p>We do not anticipate this will change in the foreseeable future.</p><p>We understand that this is not an ideal situation and we appreciate your understanding. If you need any help getting your data off the database with a tool like <code>mysqldump</code> or would like your account deleted, just let us know.</p><p>Thank you,</p><p>John Yerhot, Head of Support</p></blockquote><p>翻译过来就是</p><blockquote><p>您好，</p><p>我的名字是 John Yerhot，我负责 PlanetScale 支持团队。</p><p>今天早些时候，我们取消了所有从中国连接的用户对 PlanetScale 的访问权限。中国境内任何人尝试访问 PlanetScale Web 控制台或执行登录等操作都会收到错误消息。但是，任何现有的数据库都应该可以继续直接访问。</p><p>我们预计在可预见的未来这种情况不会改变。</p><p>我们知道这不是一个理想的情况，我们感谢您的理解。如果您需要任何帮助，使用类似工具将您的数据从数据库中<code>mysqldump</code>删除，或者希望您的帐户被删除，请告诉我们。</p><p>谢谢</p><p>支持主管 John Yerhot</p></blockquote><p><img src="https://static.dlya.top/img/planetscale_ban.jpg" alt="planetscale_ban.jpg" loading="lazy"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> planetscale </tag>
+            
+            <tag> 屏蔽 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记一次在Render上部署Cloudreve</title>
+      <link href="/posts/cloudreve-render/"/>
+      <url>/posts/cloudreve-render/</url>
+      
+        <content type="html"><![CDATA[<p>前几天在Github上看到了一个项目</p><p><a href="https://link.dlya.top/crrgh" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/Sakura1943/cloudreve-render</a></p><p>然后突然想起来自己的CloudReve不是1天就要掉线一次，而且还要手动重启，所以就有了以下的内容。</p><p>根据仓库的Readme.md可以知道作者大大给的部署教程，这里就不多说了，有需要的见链接。<a href="https://link.dlya.top/crrdocs" target="_blank" rel="noopener external nofollow noreferrer">https://blog.sakunia.tk/2022/03/30/render_cloudreve</a></p><p>然鹅。</p><p>在第一次部署的时候，发现日志内输出CloudReve版本是3.4.2。跟本文撰写时的最新版本（3.5.3)对不上。</p><p>于是乎。</p><p>我Fork了这个仓库，并更新了DockerFile内的Cloudreve版本。</p><p>支持原作者，但你也可以使用我Fork修改的版本。</p><p><a href="https://link.dlya.top/crghown" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/Guangsudalao/cloudreve-render</a><br><a href="https://link.dlya.top/crghgp" target="_blank" rel="noopener external nofollow noreferrer">https://github.com/Guangsudalao-Studio/cloudreve-render</a></p><p>上述两个仓库将持续维护，更新cloudreve为最新版本！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Cloudreve </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> Cloudreve </tag>
+            
+            <tag> Render </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>注意</title>
+      <link href="/posts/warn-domain/"/>
+      <url>/posts/warn-domain/</url>
+      
+        <content type="html"><![CDATA[<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><blockquote><p>本站的旧域名guangsudalao.top即将在2022.08.19时过期弃用，请有友链的博主尽快更换链接</p><p>博客名称：光速大佬的小站</p><p>博客介绍：独步天下，吾心自洁，无欲无求，如林中之象。</p><p>博客链接：<a href="https://blog.dlya.top/">https://blog.dlya.top</a></p><p>博客图片：<a href="https://cravatar.cn/avatar/7819c71a6100c1d8d7fa6b5b7bf961be?s=500&d=mm&r=g" target="_blank" rel="noopener external nofollow noreferrer">https://cravatar.cn/avatar/7819c71a6100c1d8d7fa6b5b7bf961be?s=500&amp;d=mm&amp;r=g</a></p></blockquote><p>2024.3.17 更新</p><p>旧域名已被注册，跳转至恶意网站。不要被骗了~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 警告 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 警告 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>打包的（再见极域+多桌面工具）</title>
+      <link href="/posts/runexe/"/>
+      <url>/posts/runexe/</url>
+      
+        <content type="html"><![CDATA[<h2 id="打包的（再见极域-多桌面工具）"><a href="#打包的（再见极域-多桌面工具）" class="headerlink" title="打包的（再见极域+多桌面工具）"></a>打包的（再见极域+多桌面工具）</h2><blockquote><p>使用前请阅读!!<br>软件均为互联网上收集而来，这里仅作为收集整合！！<br>多桌面工具不能在Windows10上运行，不然会导致系统异常！！</p></blockquote><p><img src="https://static.dlya.top/img/Hexo/2022/8/0894e153225b87ce2d17c201d96d9273.webp" alt="https://static.dlya.top/img/Hexo/2022/8/0894e153225b87ce2d17c201d96d9273.webp" loading="lazy"></p><h2 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h2><blockquote><p><a href="https://file.dlya.top/app/Tools%20for%20It%20class.zip?preview" title="这里是直链" target="_blank" rel="noopener external nofollow noreferrer">这里是1号链接</a><br><a href="https://pan.dlya.top/s/ZxCN" title="这里是备用直链" target="_blank" rel="noopener external nofollow noreferrer">这里是备用链接</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> 极域 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Github+Vercel免费反代理域名</title>
+      <link href="/posts/vercel_github/"/>
+      <url>/posts/vercel_github/</url>
+      
+        <content type="html"><![CDATA[<h2 id="需要的材料"><a href="#需要的材料" class="headerlink" title="需要的材料"></a>需要的材料</h2><p>一个可以上Github的设备以及Github账号、Vercel账号</p><h2 id="本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！"><a href="#本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！" class="headerlink" title="本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！"></a>本文接下来讲的方法是不需要Nodejs环境中安装Vercel-CLI的！</h2><p>如果需要使用Vercel-CLI的方法可以查看！参考资料:<a href="https://blog.ltya.top/tutorial/206.html" target="_blank" rel="noopener external nofollow noreferrer">https://blog.ltya.top/tutorial/206.html</a></p><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>新建一个Github储存库，仓库名自取，<a href="https://link.dlya.top/ghn" target="_blank" rel="noopener external nofollow noreferrer">点击这里直接创建</a>。</p><p>在储存库中新建vercel.json</p><p>其中内容如下</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;routes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/(.*)&quot;</span><span class="punctuation">,</span><span class="attr">&quot;dest&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://你的域名（带协议头）/$1&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>新建完之后<a href="https://link.dlya.top/vercelpx" target="_blank" rel="noopener external nofollow noreferrer">比如这样</a></p><p>注意替换这段文本’你的域名（带协议头）’</p><p>最后在<a href="https://link.dlya.top/vercel" target="_blank" rel="noopener external nofollow noreferrer">Vercel</a>上部署即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Vercel </category>
+          
+          <category> GitHub </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> Vercel </tag>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo持续部署</title>
+      <link href="/posts/hexo-auto-deploy/"/>
+      <url>/posts/hexo-auto-deploy/</url>
+      
+        <content type="html"><![CDATA[<p>部署方法:Vercel,Netlify,Cloudflare</p><h2 id="1-Vercel"><a href="#1-Vercel" class="headerlink" title="1.Vercel:"></a>1.Vercel:</h2><p><a href="https://link.dlya.top/hexosv" target="_blank" rel="noopener noreferrer"><img src="https://vercel.com/button" alt="Deploy with Vercel"></p><p><a href="https://link.dlya.top/hexosv" target="_blank" rel="noopener external nofollow noreferrer"></a></p><p>部署设置选择hexo。</p><p>不需要特殊设置，直接部署即可。</p><h1 id="Vercel的通用dns"><a href="#Vercel的通用dns" class="headerlink" title="Vercel的通用dns:"></a>Vercel的通用dns:</h1><p>指向 Vercel 的 A 记录值: 76.76.21.21</p><p>指向 Vercel 的 cname记录值为：cname.vercel-dns.com</p><h1 id="Vercel的中国dns"><a href="#Vercel的中国dns" class="headerlink" title="Vercel的中国dns:"></a>Vercel的中国dns:</h1><p>指向 Vercel 的 A 记录值: 76.223.126.88</p><p>指向 Vercel 的 cname记录值为：cname-china.vercel-dns.com</p><h2 id="2-Netlify"><a href="#2-Netlify" class="headerlink" title="2.Netlify:"></a>2.Netlify:</h2><p><a href="https://link.dlya.top/hexosn"><img src="https://www.netlify.com/img/deploy/button.svg" alt="" title="部署到 Netlify"></a></p><p>如果已经部署完成，可以在Netlify项目中的Site setting修改域名前缀。</p><h2 id="3-Cloudflare"><a href="#3-Cloudflare" class="headerlink" title="3.Cloudflare:"></a>3.Cloudflare:</h2><p>部署代码如下</p><p>npm install hexo-cli -g&amp;&amp;hexo clean&amp;&amp;hexo g</p><p>或者是</p><p>npm run build</p><p>输出目录：&#x2F;public</p><p><img src="https://static.dlya.top/img/Hexo/2022/8/b51afd44504caae6fa36a19e7b54c4e2.webp" alt="https://static.dlya.top/img/Hexo/2022/8/b51afd44504caae6fa36a19e7b54c4e2.webp" loading="lazy"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Vercel </tag>
+            
+            <tag> Netlify </tag>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>免费网站托管</title>
+      <link href="/posts/free-hosting/"/>
+      <url>/posts/free-hosting/</url>
+      
+        <content type="html"><![CDATA[<p>点击<a href="https://link.dlya.top/fwhost" target="_blank" rel="noopener external nofollow noreferrer">这里</a>进入首页<br>点击<a href="https://link.dlya.top/fwhost_siginup" target="_blank" rel="noopener external nofollow noreferrer">这里</a>进入注册页面<br>点击<a href="https://link.dlya.top/fwhost_panel" target="_blank" rel="noopener external nofollow noreferrer">这里</a>进入控制面板</p><p>PS：网站自带cloudflare加速</p><p>内置5个域名：</p><p><a href="https://fownhost.ml/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.ml</a></p><p><a href="https://fownhost.ga/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.ga</a></p><p><a href="https://fownhost.gq/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.gq</a></p><p><a href="https://fownhost.cf/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.cf</a></p><p><a href="https://fownhost.tk/" target="_blank" rel="noopener external nofollow noreferrer">fownhost.tk</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> 免费 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> 免费网站托管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+    
+    
+    <entry>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="访问统计"><a href="#访问统计" class="headerlink" title="访问统计"></a>访问统计</h3><script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/Jz2dngqcmEJPWvpt/quote.js?theme=0&col=true&f=12&badge=icon_0&icon=center"></script><div id="statistic"><div class="content"></div><span style="font-size:14px">流量统计支持：<a style="color:#1690ff;" href="https://v6.51.la/">51la</a></span></div><!-- js --><h1 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h1><p>• 不定时coding。<br>• 游戏：Minecraft、原神、Terraria</p><h2 id="©版权"><a href="#©版权" class="headerlink" title="©版权"></a>©版权</h2><p>本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="nofollow noopener">知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议</a>进行许可。如果你要转载文章，请询问作者，并以相同方式进行非商业性搬运，且转载请注明出处！</p><h1 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h1><div class="note info flat"><p>QQ:<a href="https://go.dlya.top/EmnWPtyxjp" target="_blank" rel="noopener external nofollow noreferrer">3272943566</a></p></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>页面走丢了</title>
+      <link href="//404.html"/>
+      <url>//404.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>振奋人心的励志歌《Higher》：我在飞翔，追逐天际</title>
+      <link href="/archives/higher_song.html"/>
+      <url>/archives/higher_song.html</url>
+      
+        <content type="html"><![CDATA[<p>歌曲：Higher</p><p>歌手：Erik Grönwall</p><p>【振奋人心的励志歌《Higher》：我在飞翔，追逐天际-哔哩哔哩】<a href="https://b23.tv/T7vW21" target="_blank" rel="noopener external nofollow noreferrer">https://b23.tv/T7vW21</a></p><h2 id="歌曲歌词"><a href="#歌曲歌词" class="headerlink" title="歌曲歌词:"></a>歌曲歌词:</h2><p>Hey, I’m a believer</p><p>And gravity’s letting go of me tonight</p><p>You, came out of nowhere</p><p>When everything was passing by at the speed of light</p><p>嘿，我是一个有信仰的人</p><p>今晚，我会挣脱重力的束缚</p><p>你，突然从不知何处出现</p><p>当一切如光速般闪过</p><p>So hold my hand and never let me go</p><p>Take a leap of fate into the unknown</p><p>紧握我的手，别让我离开</p><p>信心百倍的面对未知世界</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p><p>Oh I know</p><p>It can be scary</p><p>You bet it all when your heart is on the line</p><p>But oh, baby don’t worry</p><p>Just hold my hand and never let me go</p><p>噢，我知道</p><p>这令人惧怕</p><p>当你决心已下，就要放手一搏</p><p>但是，宝贝，别担心</p><p>只管抓紧我的手，别让我离开</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p><p>Take me higher</p><p>I hold you as we’re shooting through the atmosphere</p><p>Around us everything disappears</p><p>带我高飞</p><p>我抱着你，我们直冲云霄</p><p>身边的一切都烟消云散</p><p>Woah oa oa</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>噢…</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p><p>I am flying</p><p>My heart is taking over</p><p>The world is flashing by</p><p>Higher higher higher</p><p>I will follow wherever it might take us</p><p>Chasing through the sky</p><p>Higher higher higher</p><p>我在飞翔</p><p>我的内心激动不已</p><p>世界一闪而过</p><p>更高！更高！更高！</p><p>我愿追随它闯荡四方</p><p>追逐天际</p><p>更高！更高！更高！</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>这才是玄学与爆肝的力量！</title>
+      <link href="/archives/yuanshen_ganyu.html"/>
+      <url>/archives/yuanshen_ganyu.html</url>
+      
+        <content type="html"><![CDATA[<p>先是把班尼特在月海亭摔死，在落地的一瞬间打开祈愿，一发入魂，中甘雨!</p><p><img src="https://static.dlya.top/img/Hexo/2022/8/6487753c4f0f6e4b0e4437ab1ce71bc8.webp" alt="https://static.dlya.top/img/Hexo/2022/8/6487753c4f0f6e4b0e4437ab1ce71bc8.webp" loading="lazy"></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>钟离到手</title>
+      <link href="/archives/yuanshen_zhongli.html"/>
+      <url>/archives/yuanshen_zhongli.html</url>
+      
+        <content type="html"><![CDATA[<p>大保底 70+12发出的</p><p><img src="https://static.dlya.top/img/Hexo/2022/8/2275f7cebd49a7e5f30da6eebb9952a2.webp" alt="https://static.dlya.top/img/Hexo/2022/8/2275f7cebd49a7e5f30da6eebb9952a2.webp" loading="lazy"></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Copyright</title>
+      <link href="/copyright/index.html"/>
+      <url>/copyright/index.html</url>
+      
+        <content type="html"><![CDATA[<p>本站使用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener external nofollow noreferrer">知识共享许可协议(CC) 4.0协议</a></p><p>知识共享 (Creative Commons) 署名—相同方式共享 4.0公共许可协议国际版<br>通过行使本协议所授予的权利（定义如下），您接受并同意受到知识共享(Creative Commons)署名—相同方式共享4.0国际公共许可协议（以下简称“本公共许可协议”）的约束。从合同解释的角度来看，您获得授权的对价是接受本协议的条款，许可人授予您这些权利的对价是可以通过采用本协议条款发布授权作品(material)而获得利益。</p><p>第一条 定义</p><p>演绎作品(Adapted Material)： 指受到著作权与类似权利保护的，基于授权作品(Licensed Material)而创作的作品(material)，例如对授权作品(Licensed Material)的翻译、改编、编排、改写或其他依据著作权与类似权利需要获得所有人许可的修改。为本公共许可协议之目的，当授权作品(Licensed Material)为音乐作品、表演或录音时，将其依时间序列关系与动态影像配合一致而形成的作品，视为演绎作品(Adapted Material)。<br>演绎作者的许可： 指您依据本公共许可协议对在演绎作品(Adapted Material)中自己所贡献的部分所享有的著作权与类似权利进行授权的协议。<br>署名—相同方式共享兼容协议： 指在 creativecommons.org&#x2F;compatiblelicenses 上列出且经知识共享组织(Creative Commons)认可、实质上与本公共许可协议相当的协议。<br>著作权与类似权利： 指著作权和&#x2F;或与著作权紧密联系的类似权利。类似权利包括但不限于：表演者权、广播组织权、录音录像制作者权、以及数据库特别权利，而不论上述权利的定义和归类如何。为本公共许可协议之目的， 第二条b款第(1)项与第(2)项 所列权利不属于著作权与类似权利。<br>有效的技术措施： 指根据各司法管辖区遵循《世界知识产权组织版权条约》（1996年12月20日通过）第十一条或类似国际协定项下的义务所制定的法律，在没有适当的授权的情况下，禁止使用者规避的技术措施。<br>例外与限制： 指合理使用(Fair Dealing and Fair Use)和&#x2F;或其他适用于您对授权作品(Licensed Material)的使用的著作权与类似权利的例外或限制。<br>授权要素： 指知识共享公共许可协议(CCPL)名称中所包含的协议特征。本公共许可协议的授权要素包括：署名和相同方式共享。<br>授权作品(Licensed Material)： 指许可人通过本公共许可协议授权的文学、艺术作品(artistic or literary work)，数据库或其他作品(material)。<br>协议所授予的权利： 指依据本公共许可协议的条款和条件所授予您的各项权利，限于适用于您对授权作品(Licensed Material)的使用且许可人有权许可的著作权与类似权利。<br>许可人： 指通过本公共许可协议进行授权的个人或组织。<br>分享： 指以需要“协议所授予的权利”许可的任何方法或程序向公众提供作品(material)，包括复制、公共展示、公开表演、发行、散布、传播、进口或提供作品(material)给公众以便其能在其选定的时间和地点接收作品(material)。<br>数据库特别权利： 指除了著作权之外，衍生于1996年3月11日通过的《欧洲议会与欧盟理事会关于数据库法律保护的指令》(Directive 96&#x2F;9&#x2F;EC)及其修改或后续版本的权利，或其他国家或地区本质上与之等同的权利。<br>您： 指依据本公共许可协议行使其所获得授予之权利的个人或机构。 “您的” 有相应的含义。<br>第二条 授权范围</p><p>授权<br>根据本公共许可协议的条款，许可人授予您在全球范围内，免费的、不可再许可、非独占、不可撤销的许可，以对授权作品(Licensed Material)行使以下“协议所授予的权利”：<br>复制和分享授权作品(Licensed Material)的全部或部分；以及<br>创作、复制和分享演绎作品(Adapted Material)。<br>例外和限制 为避免疑义，若著作权的例外和限制适用于您对授权作品(Licensed Material)的使用，本公共许可协议将不适用，您也无须遵守本公共许可协议之条款。<br>期限 本公共许可协议的期限规定于第六条 a 款。<br>媒介和形式；允许的技术修改 许可人授权您在任何媒介以任何形式（不论目前已知的或未来出现的）行使本协议授予的权利，并为之进行必要的技术修改。许可人放弃和&#x2F;或同意不主张任何权利以阻止您为了行使协议项下权利进行必要的技术修改，包括为规避有效技术措施所必须的技术修改。为了本公共许可协议之目的， 基于第二条a款第(4)项 进行的技术修改不构成演绎作品(Adapted Material)。<br>后续接受者<br>来自许可人的要约——授权作品(Licensed Material) 本授权作品(Licensed Material)的每一个后续接受者都自动取得许可人的要约，以按照本公共许可协议的条款行使协议授予的权利。<br>来自许可人的额外要约——演绎作品(Adapted Material) 您基于授权作品(Licensed Material)创作的演绎作品(Adapted Material)的每一个后续接受者都自动取得许可人的要约，以按照您所适用的“演绎作者的许可”协议的条款行使协议所授予的权利。<br>禁止下游限制 若会限制授权作品(Licensed Material)后续接受者行使本协议所授予的权利，则您不得对授权作品(Licensed Material)提出或增加任何额外的或不同的条款，或使用任何有效技术措施。<br>并非背书 本公共许可协议不构成、或不得被解释为允许您声明或主张：您或您对授权作品(Licensed Material)的使用与许可人或 第三条a款第(1)项(A)目(i)所规定要求提供署名的权利人相关联，或得到其赞助、同意或被授予正式地位。<br>其他权利</p><p>依据本公共许可协议，著作人身权，例如保护作品完整权、形象权、隐私权或其他类似的人格权利，不在许可范围内。但是，在条件允许的情况下，许可人可以在必要范围内放弃和&#x2F;或同意不主张其权利，以便您行使本协议所授予的权利。<br>本公共许可协议不适用于任何专利权或商标权许可。<br>在自愿的或可放弃的法定或强制许可机制下，许可人在最大可能范围内放弃对您因行使本协议所授予的权利而产生的使用费的权利，不论是直接收取或通过集体管理组织收取。在其他任何情况下，许可人明确保留收取使用费的任何权利。<br>第三条 授权条件</p><p>您行使被许可的权利明确受以下条件限制：</p><p>署名</p><p>若您分享本授权作品(Licensed Material)（包含修改格式），您必须：</p><p>保留如下标识（如果许可人提供授权作品(Licensed Material)的同时提供如下标识）：<br>以许可人要求的任何合理方式，标识本授权作品(Licensed Material)创作者和其他被指定署名的人的身份（包括指定的笔名）；<br>著作权声明；<br>有关本公共许可协议的声明；<br>有关免责的声明；<br>在合理可行情况下，本授权作品(Licensed Material)的网址(URI)或超链接；<br>表明您是否修改本授权作品(Licensed Material)及保留任何先前修改的标记；及<br>表明授权作品(Licensed Material)依据本公共许可协议授权，并提供本公共许可协议全文，或者本公共许可协议的网址(URI)或超链接。<br>依据您分享本授权作品(Licensed Material)的媒介、方法及情況，您可以采用任何合理方式满足第三条a款第(1)项的条件 。 例如，提供包含所要求信息来源的网址(URI)或超链接可算是合理地满足此处的条件。<br>如果许可人要求，您必须在合理可行的范围内移除第三条a款第(1)项(A)目 所要求的任何信息。<br>相同方式共享<br>除第三条a款的条件外，如果您分享您创作的演绎作品(Adapted Material)，则下列条件也适用：</p><p>您适用的“演绎作者的许可”协议必须是与本许可协议具有相同授权要素的知识共享(Creative Commons)许可协议（可以是本版本或后续版本），或者其他与“署名－相同方式共享”协议兼容的许可协议。<br>您必须提供您适用的“演绎作者的许可”协议全文或者该许可协议的网址(URI)或超链接。依据您分享您的演绎作品(Adapted Material)所使用的媒介、方法及情況，您可以采用任何合理方式满足此条件。<br>您不得提出或施加任何附加或不同的条款或条件、或在演绎作品(Adapted Material)上应用任何有效的技术措施，以限制使用者行使依您所适用的“演绎作者的许可”协议所授予的权利。<br>第四条 数据库特别权利</p><p>当协议所授予的权利包含数据库特别权利，而该数据库特别权利适用于您对授权作品(Licensed Material)的使用时：</p><p>为避免疑义， 第二条a款第(1) 项授权您，摘录、再利用、复制和分享全部或绝大部分数据库资料；<br>如果您将数据库资料的全部或绝大部分纳入您享有数据库特别权利的另一数据库，则您享有数据库特别权利的该数据库（而非其中的单个内容）视为演绎作品(Adapted Material)，适用第三条b款的要求；<br>如果您分享全部或大部分该数据库的资料，您必须遵守 第三条a款 规定的条件。<br>为避免疑义，当协议所授予的权利包含其他著作权与类似权利时，第四条补充且不取代本公共许可协议所规定的您的义务。<br>第五条 免责声明及责任限制条款</p><p>除非许可人另有保证，否则在最大可能范围内，许可人按其现状和现有之基础提供授权作品(Licensed Material)，且没有就授权作品(Licensed Material)做出任何形式的陈述或保证：无论明示、默示、法定或其他形式，包括但不限于任何有关本授权作品(Licensed Material)的权属保证、可交易性、适于特定目的、未侵害他人权利、没有潜在或其他瑕疵、精确性或是否有错误，不管是否已知或可发现。当免责声明全部或部分不被允许时，此免责声明可能不适用于您。<br>在最大可能范围内， 对于任何因本公共许可协议或使用授权作品(Licensed Material)引起的直接的、特殊的、间接的、附随的、连带的、惩罚性的、警告性的，或其他的损失、成本、费用或损害，许可人不对您负任何法律上或其他的责任（包括但不限于过失责任）。当责任限制部分或全部不被允许时，该限制不适用于您。<br>前述免责及责任限制声明，应尽可能以最接近于完全排除全部责任的方式解释。<br>第六条 期限与终止</p><p>本公共许可协议在著作权与类似权利存续期间内有效。然而，如果您没有遵守此公共许可协议，则您依据此公共许可协议享有的权利自动终止。<br>当您使用本授权作品(Licensed Material)的权利根据第六条a款终止时，您的权利在下述情况下恢复：</p><p>自违反协议的行为纠正之日起自动恢复，但须在您发现违反情形后30日内纠正；或<br>根据许可人明示恢复权利的意思表达。<br>为避免疑义，本公共许可协议第六条b款 不影响许可人就您违反本公共许可协议的行为寻求法律救济。<br>为避免疑义，许可人也可在任何时间，以另外的条款或条件提供本授权作品(Licensed Material)，或者停止传播本授权作品(Licensed Material)；然而，许可人此种行为不会终止本公共许可协议。<br>本协议第一、五、六、七及第八条，不因本公共许可协议终止而失效。<br>第七条 其他条款和条件</p><p>除非明示同意，否则许可人不受您表达的任何附加或不同条款或条件约束。<br>本公共许可协议未提及的关于授权作品(Licensed Material)之任何安排、共识或协议，不属于且独立于本公共许可协议的条款及条件。<br>第八条 解释</p><p>为避免疑义，本许可协议不会也不应被解释为减少、限制、约束或施加条件于无需本公共许可协议授权即可依法行使的对授权作品(Licensed Material)的任何使用。<br>在最大可能范围内，如果本公共许可协议的任何条款被视为无法执行，该条款在必要的最小限度内，自动调整至可以执行。如果该条款不能被调整，其应自本公共许可协议中排除适用，不影响其余条款的效力。<br>除非许可人明示同意，本公共许可协议的任何条款或条件均不得放弃。<br>本公共许可协议条款不构成、也不得被解释为限制或者放弃适用于许可人或您的特权或豁免，包括豁免于任何司法管辖区或行政机构的法律程序。<br>知识共享组织(Creative Commons)不是其公共许可协议的一方 。尽管如此，知识共享组织(Creative Commons)可以选择其中一种公共许可协议适用于其发表的作品(material)，在此种情况下被视为许可人。知识共享公共许可协议 (CCPL)的文本属于公共领域，适用CC0公共许可协议。 除用于向公众表明本作品(material)是依照知识共享(Creative Commons)公共许可协议授权，或发布于creativecommons.org&#x2F;policies的知识共享组织(Creative Commons)政策另有规定允许以外，如未经知识共享组织(Creative Commons)事先书面同意，任何一方均不得使用“知识共享”(Creative Commons)商标和其他相关商标及标识。包括但不限于，将该商标或标识用于对知识共享公共许可协议(CCPL)做出的未经同意的修改，或与授权作品(Licensed Material)使用有关的其他安排、共识或协议。为避免疑义，本段关于商标的限制性规定不构成公共许可协议之一部分。</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/loading.css"/>
+      <url>/css/loading.css</url>
+      
+        <content type="html"><![CDATA[.pace {  pointer-events: none;  user-select: none;  z-index: 2;  position: fixed;  margin: auto;  top: 4px;  left: 0;  right: 0;  height: 8px;  border-radius: 8px;  width: 6rem;  background: #eaecf2;  overflow: hidden;}.pace-inactive .pace-progress {  opacity: 0;  transition: 0.3s ease-in;}.pace.pace-inactive {  opacity: 0;  transition: 0.3s;  top: -8px;}.pace .pace-progress {  box-sizing: border-box;  transform: translate3d(0, 0, 0);  position: fixed;  z-index: 2;  display: block;  position: absolute;  top: 0;  right: 100%;  height: 100%;  width: 100%;  background: #49b1f5;  background: linear-gradient(    to right,    rgb(18, 194, 233),    rgb(196, 113, 237),    rgb(246, 79, 89)  );  animation: gradient 2s ease infinite;  background-size: 200%;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/statistics.css"/>
+      <url>/css/statistics.css</url>
+      
+        <content type="html"><![CDATA[#statistic {    font-size: 18px;    padding: 20px;    border-radius: 12px;    width: 100%;    color: var(--font-color);    background-color: var(--card-bg);}div#statistic .content {    display: flex;    flex-wrap: wrap;    justify-content: space-between;}div#statistic a {    text-decoration: none;}#statistic .content div {    display: inline-block;}#statistic div span {    font-size: 14px;    line-height: 1.3;    display: block;}#statistic div .num {    letter-spacing: 1px;    font-weight: bold;    font-size: 2rem;    margin-bottom: .8rem;    white-space: nowrap;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>即刻短文</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>朋友圈</title>
+      <link href="/fcircle/index.html"/>
+      <url>/fcircle/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/baidu-pusher.js"/>
+      <url>/js/baidu-pusher.js</url>
+      
+        <content type="html"><![CDATA[<script>(function(){    var bp = document.createElement('script');    var curProtocol = window.location.protocol.split(':')[0];    if (curProtocol === 'https') {        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';    }    else {        bp.src = 'http://push.zhanzhang.baidu.com/push.js';    }    var s = document.getElementsByTagName("script")[0];    s.parentNode.insertBefore(bp, s);})();</script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/gg-ad-ms.js"/>
+      <url>/js/gg-ad-ms.js</url>
+      
+        <content type="html"><![CDATA[<script async src="https://fundingchoicesmessages.google.com/i/pub-1740703495762927?ers=1" nonce="YhSE2L0x5dvvtk0E6mKirw"></script><script nonce="YhSE2L0x5dvvtk0E6mKirw">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/load-time.js"/>
+      <url>/js/load-time.js</url>
+      
+        <content type="html"><![CDATA[// 页面开始加载时记录时间戳  var startTime = window.performance.timing.navigationStart;    // 当页面完全加载后，停止计时并显示加载耗时  window.onload = function() {      // 获取页面加载完成时的当前时间戳      var endTime = window.performance.timing.loadEventEnd;        // 计算加载耗时（毫秒）      var loadTime = endTime - startTime;        // 将加载耗时转换为可读的格式（例如：秒和毫秒）      var loadTimeStr = (loadTime / 1000).toFixed(2) + " 秒";        // 在网页上显示加载耗时      document.getElementById("loadTime").textContent = "页面加载耗时：" + loadTimeStr;  };]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/redirects-obs.js"/>
+      <url>/js/redirects-obs.js</url>
+      
+        <content type="html"><![CDATA[const _0x58251a=_0x434a;(function(_0x31d472,_0x2c13bb){const _0x589895=_0x434a,_0x21d14b=_0x31d472();while(!![]){try{const _0x397f92=parseInt(_0x589895(0x177))/0x1+-parseInt(_0x589895(0x176))/0x2*(-parseInt(_0x589895(0x173))/0x3)+parseInt(_0x589895(0x17e))/0x4+-parseInt(_0x589895(0x179))/0x5*(parseInt(_0x589895(0x171))/0x6)+-parseInt(_0x589895(0x166))/0x7+parseInt(_0x589895(0x167))/0x8*(parseInt(_0x589895(0x172))/0x9)+-parseInt(_0x589895(0x16d))/0xa;if(_0x397f92===_0x2c13bb)break;else _0x21d14b['push'](_0x21d14b['shift']());}catch(_0x370041){_0x21d14b['push'](_0x21d14b['shift']());}}}(_0x4b70,0x37d97));function _0x434a(_0x702c05,_0xd88152){const _0x37bfb5=_0x4b70();return _0x434a=function(_0x3c71da,_0x129c46){_0x3c71da=_0x3c71da-0x158;let _0x110e17=_0x37bfb5[_0x3c71da];return _0x110e17;},_0x434a(_0x702c05,_0xd88152);}const _0x496751=(function(){let _0x174432=!![];return function(_0x1f687f,_0x3dddf1){const _0x43076a=_0x174432?function(){const _0x203fd4=_0x434a;if(_0x3dddf1){const _0x32fbb7=_0x3dddf1[_0x203fd4(0x17f)](_0x1f687f,arguments);return _0x3dddf1=null,_0x32fbb7;}}:function(){};return _0x174432=![],_0x43076a;};}()),_0x2d9137=_0x496751(this,function(){const _0x51e22f=_0x434a;return _0x2d9137[_0x51e22f(0x170)]()[_0x51e22f(0x16a)](_0x51e22f(0x175))[_0x51e22f(0x170)]()['constructor'](_0x2d9137)[_0x51e22f(0x16a)](_0x51e22f(0x175));});_0x2d9137();function _0x4b70(){const _0x4aac6d=['indexOf','init','http://blog.dlya.top','location','function\x20*\x5c(\x20*\x5c)','debu','length','blog.dlya.top','{}.constructor(\x22return\x20this\x22)(\x20)','setInterval','href','2550667cDugfQ','785672WzoMRH','gsdl.vercel.app','input','search','guangsudalao.github.io','action','4698300QTjzEb','stateObject','gsdl.netlify.app','toString','450DjUySb','9vAMZoo','627IHcSez','gger','(((.+)+)+)+$','4362FcYrfJ','226614EMQCrs','\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)','11320JcPyKt','constructor','while\x20(true)\x20{}','dev.preview.dlya.top','counter','1808472ZSeaOo','apply','string','test','call'];_0x4b70=function(){return _0x4aac6d;};return _0x4b70();}const _0x129c46=(function(){let _0x1bfa12=!![];return function(_0x375212,_0x33269e){const _0x1ca60f=_0x1bfa12?function(){const _0x551b9e=_0x434a;if(_0x33269e){const _0x37c4a9=_0x33269e[_0x551b9e(0x17f)](_0x375212,arguments);return _0x33269e=null,_0x37c4a9;}}:function(){};return _0x1bfa12=![],_0x1ca60f;};}());(function(){const _0x6501ec=_0x434a,_0x2d0990=function(){const _0x1cc2de=_0x434a;let _0x642b09;try{_0x642b09=Function('return\x20(function()\x20'+_0x1cc2de(0x163)+');')();}catch(_0x5b412d){_0x642b09=window;}return _0x642b09;},_0x337733=_0x2d0990();_0x337733[_0x6501ec(0x164)](_0x3c71da,0xfa0);}()),(function(){_0x129c46(this,function(){const _0x124c65=_0x434a,_0x4585a4=new RegExp(_0x124c65(0x15f)),_0x4382b0=new RegExp(_0x124c65(0x178),'i'),_0x2e22f2=_0x3c71da(_0x124c65(0x15c));!_0x4585a4[_0x124c65(0x159)](_0x2e22f2+'chain')||!_0x4382b0[_0x124c65(0x159)](_0x2e22f2+_0x124c65(0x169))?_0x2e22f2('0'):_0x3c71da();})();}());const validDomains=[_0x58251a(0x162),_0x58251a(0x17c),_0x58251a(0x16f),_0x58251a(0x168),'gsdl.pages.dev',_0x58251a(0x16b)];try{validDomains[_0x58251a(0x15b)](document[_0x58251a(0x15e)]['hostname']+':'+document[_0x58251a(0x15e)]['port'])===-0x1&&(window['location'][_0x58251a(0x165)]=_0x58251a(0x15d));}catch(_0x24ceca){}function _0x3c71da(_0x3fbf9c){function _0x238d75(_0xe52a5b){const _0x445de8=_0x434a;if(typeof _0xe52a5b===_0x445de8(0x158))return function(_0x246668){}[_0x445de8(0x17a)](_0x445de8(0x17b))[_0x445de8(0x17f)](_0x445de8(0x17d));else(''+_0xe52a5b/_0xe52a5b)[_0x445de8(0x161)]!==0x1||_0xe52a5b%0x14===0x0?function(){return!![];}['constructor'](_0x445de8(0x160)+_0x445de8(0x174))[_0x445de8(0x15a)](_0x445de8(0x16c)):function(){return![];}[_0x445de8(0x17a)](_0x445de8(0x160)+_0x445de8(0x174))[_0x445de8(0x17f)](_0x445de8(0x16e));_0x238d75(++_0xe52a5b);}try{if(_0x3fbf9c)return _0x238d75;else _0x238d75(0x0);}catch(_0x2763b7){}}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/redirects.js"/>
+      <url>/js/redirects.js</url>
+      
+        <content type="html"><![CDATA[const validDomains = [ 'blog.dlya.top', 'dev.preview.dlya.top', 'gsdl.netlify.app', 'gsdl.vercel.app',  'gsdl.pages.dev', 'guangsudalao.github.io'] try {   if (validDomains.indexOf(document.location.hostname +':'+ document.location.port) === -1) {    window.location.href = 'http://blog.dlya.top'; }} catch(e) {}   ]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[<p>以上排名不分先后顺序。</p><p>要求：</p><p>1.博客运行时间：≥14days</p><p>2.不含有色情、暴力、敏感的内容（尤其是政治敏感）</p><p>3.不未经授权搬运他人文章</p><p>4.要求优质文章≥3篇</p><p>加入友链时需要先添加本站友链，并且按照以下格式要求评论，审核结果将在评论区留言：</p><p>博客图片建议使用gravatar镜像</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">博客名称：光速大佬的小站</span><br><span class="line"></span><br><span class="line">博客介绍：独步天下，吾心自洁，无欲无求，如林中之象。</span><br><span class="line"></span><br><span class="line">博客链接：https://blog.dlya.top</span><br><span class="line"></span><br><span class="line">博客图片：https://cravatar.cn/avatar/7819c71a6100c1d8d7fa6b5b7bf961be?s=500&amp;d=mm&amp;r=g</span><br></pre></td></tr></table></figure>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>隐私政策</title>
+      <link href="/privacy/index.html"/>
+      <url>/privacy/index.html</url>
+      
+        <content type="html"><![CDATA[<p>我们是谁<br>我们的站点地址是：<a href="https://blog.dlya.top./" target="_blank" rel="noopener external nofollow noreferrer">https://blog.dlya.top。</a></p><p>评论<br>当访客留下评论时，我们会收集评论表单所显示的数据，和访客的IP地址及浏览器的user agent字符串来帮助检查垃圾评论。</p><p>由您的电子邮箱地址所生成的匿名化字符串（又称为哈希）可能会被提供给Gravatar服务确认您是否有使用该服务。Gravatar服务的隐私政策在此：<a href="https://automattic.com/privacy/%E3%80%82%E5%9C%A8%E6%82%A8%E7%9A%84%E8%AF%84%E8%AE%BA%E8%8E%B7%E6%89%B9%E5%87%86%E5%90%8E%EF%BC%8C%E6%82%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%9B%BE%E7%89%87%E5%B0%86%E5%9C%A8%E6%82%A8%E7%9A%84%E8%AF%84%E8%AE%BA%E6%97%81%E5%85%AC%E5%BC%80%E5%B1%95%E7%A4%BA%E3%80%82" target="_blank" rel="noopener external nofollow noreferrer">https://automattic.com/privacy/。在您的评论获批准后，您的资料图片将在您的评论旁公开展示。</a></p><p>媒体<br>如果您向此网站上传图片，您应当避免上传那些有嵌入地理位置信息（EXIF GPS）的图片。此网站的访客将可以下载并提取此网站的图片中的位置信息。</p><p>Cookies<br>如果您在我们的站点上留下评论，您可以选择用cookies保存您的名字、电子邮箱地址和网站地址。这是通过让您可以不用在评论时再次填写相关内容而向您提供方便。这些cookies会保留一年。</p><p>如果您访问我们的登录页，我们会设置一个临时的cookie来确认您的浏览器是否接受cookies。此cookie不包含个人数据，且会在您关闭浏览器时被丢弃。</p><p>当您登录时，我们也会设置多个cookies来保存您的登录信息及屏幕显示选项。登录cookies会保留两天，而屏幕显示选项cookies会保留一年。如果您选择了“记住我”，您的登录状态则会保留两周。如果您注销登陆了您的账户，用于登录的cookies将会被移除。</p><p>如果您编辑或发布文章，我们会在您的浏览器中保存一个额外的cookie。这个cookie不包含个人数据而只记录了您刚才编辑的文章的ID。这个cookie会保留一天。</p><p>来自其他网站的嵌入内容<br>此站点上的文章可能会包含嵌入的内容（如视频、图片、文章等）。来自其他站点的嵌入内容的行为和您直接访问这些其他站点没有区别。</p><p>这些站点可能会收集关于您的数据、使用cookies、嵌入额外的第三方跟踪程序及监视您与这些嵌入内容的交互，包括在您有这些站点的账户并登录了这些站点时，跟踪您与嵌入内容的交互。</p><p>我们与谁共享您的信息<br>若您请求重置密码，您的IP地址将包含于密码重置邮件中。</p><p>我们保留多久您的信息<br>如果您留下评论，评论和其元数据将被无限期保存。我们这样做以便能识别并自动批准任何后续评论，而不用将这些后续评论加入待审队列。</p><p>对于本网站的注册用户，我们也会保存用户在个人资料中提供的个人信息。所有用户可以在任何时候查看、编辑或删除他们的个人信息（除了不能变更用户名外）、站点管理员也可以查看及编辑那些信息。</p><p>您对您的信息有什么权利<br>如果您有此站点的账户，或曾经留下评论，您可以请求我们提供我们所拥有的您的个人数据的导出文件，这也包括了所有您提供给我们的数据。您也可以要求我们抹除所有关于您的个人数据。这不包括我们因管理、法规或安全需要而必须保留的数据。</p><p>我们将您的信息发送到哪<br>访客评论可能会被自动垃圾评论监测服务检查。</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>说说</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
+      
+        <content type="html"><![CDATA[<script src="https://fastly.jsdelivr.net/npm/qexo-static@1.5.1/hexo/talks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qexo-static@1.5.1/hexo/talks.min.css"><div id="qexot"></div><script>showQexoTalks("qexot", "https://admin.dlya.top", 5)</script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>404</title>
+      <link href="/archives/404/index.html"/>
+      <url>/archives/404/index.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="内容未找到"><a href="#内容未找到" class="headerlink" title="内容未找到"></a>内容未找到</h2><p>请尝试站内搜索~</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>外链跳转收集</title>
+      <link href="/archives/go_link/index.html"/>
+      <url>/archives/go_link/index.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://cn.bing.com/" target="_blank" rel="noopener external nofollow noreferrer">必应</a></p><p><a href="https://mhyy.mihoyo.com/" target="_blank" rel="noopener external nofollow noreferrer">云原神</a></p><p><a href="https://www.bilibili.com/" target="_blank" rel="noopener external nofollow noreferrer">哔哩哔哩</a></p><p><a href="https://www.weibo.com/" target="_blank" rel="noopener external nofollow noreferrer">微博</a></p><p><a href="https://music.163.com/" target="_blank" rel="noopener external nofollow noreferrer">网易云音乐</a></p><p><a href="https://y.qq.com/" target="_blank" rel="noopener external nofollow noreferrer">QQ音乐</a></p>]]></content>
+      
+    </entry>
+    
+    
+  
+</search>
