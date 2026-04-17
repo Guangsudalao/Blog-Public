@@ -1,0 +1,7 @@
+# robots.txt
+User-agent: *
+Allow: /atom.xml
+Allow: /sitemap.xml
+Allow: /baidusitemap.xml
+Allow: /archives
+Allow: /posts
